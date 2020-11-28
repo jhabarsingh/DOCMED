@@ -1,0 +1,109 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+	<div id="map"></div>
+	<div style="position: absolute;top: 100vh;min-height:100vh">
+		<div class="row pt-3 mx-auto;" style="width:80%; margin:auto!important;">
+			<div class="col col-8">
+				<h4 class="font-weight-bolder">
+					Get in Touch 
+					<hr class="bg-secondary w-25 ml-0">
+				</h4>
+				<br>
+				<div class="row">
+					<div class="col col-6 ">
+						<input type="text" class="form-control" name="name" placeholder="Name">
+					</div>
+					<div class="col col-6">
+						<input type="email"  class="form-control" name="email" placeholder="Email">
+					</div>
+					<div class="col col-12 mt-4 ">
+						<input type="text"  class="form-control" name="subject" placeholder="Subject">
+					</div>
+					<div class="col col-12 mt-4">
+	 					<textarea class="form-control" placeholder="Message" style="height:200px;"></textarea>
+					</div>
+					<div class="col col-12 mt-4">
+						<input type="submit" name="submit" class="btn btn-outline-primary">
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="col col-4 pt-5 mt-4">
+				<div class="row">
+					<div class="col col-12 mb-4">
+						<div class="row">
+							<div class="col col-3 d-flex justify-content-center align-items-center">
+								<i class="fas h4 fa-house-user"></i>
+							</div>
+							<div class="col">
+								<div class="row">
+									<div class="col col-12">
+										<small class="font-weight-bolder" style="font-size:.9rem;">
+											Begaluru, Karanataka
+										</small>
+									</div>
+									<div class="col col-12">
+										<small class="text-muted font-weight-bold">
+											M S R Nagar, 150061
+										</small>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col col-12 my-4 ">
+						<div class="row">
+							<div class="col col-3 d-flex justify-content-center align-items-center">
+								<i class="fas h4 fa-phone-square-alt"></i>
+							</div>
+							<div class="col">
+								<div class="row">
+									<div class="col col-12">
+										<small class="font-weight-bolder" style="font-size:.9rem;">
+											+91 95927753489
+										</small>
+									</div>
+									<div class="col col-12">
+										<small class="text-muted font-weight-bold">
+											Mon to Fri 9am to 6pm
+										</small>
+									</div>
+								</div>
+							</div>	
+						</div>					
+					</div>
+
+					<div class="col col-12 my-4 ">
+						<div class="row">
+							<div class="col col-3 d-flex justify-content-center align-items-center">
+								<i class="fas fa-envelope h4 mr-1"></i>
+							</div>
+							<div class="col">
+								<div class="row">
+									<div class="col col-12">
+										<small class="font-weight-bolder" style="font-size:.9rem;">
+											support@gmail.com
+										</small>
+									</div>
+									<div class="col col-12">
+										<small class="text-muted font-weight-bold">
+											Send us your query<br>
+											at any time
+										</small>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>		
+	</div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'home.html' %}
+
+{% block content %}
+	<div class="row mt-4 mx-auto w-75">
+		{% for i in prescriptions %}
+			<div class="col col-12 container jumbotron my-4 special-effect py-1 department-card">
+				<div class="d-flex justify-content-center">
+					<div class="mr-4 btn btn-outline-primary">{{ i.patient }}</div>
+				</div>	
+				<small class="lead text-muted">
+					{{ i.symptom }}
+				</small>
+				<p>
+					{{ i.prescription}}
+				</p>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

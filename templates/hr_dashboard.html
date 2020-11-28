@@ -1,0 +1,112 @@
+{% extends 'home.html' %}
+
+{% block content %}
+	<div>
+		<div class="row m-auto container">
+			<div class="col col-4">
+				<div class="department-card m-auto">
+					<div class="card mt-3">
+						<div class="card-header h5 bg-warning">
+							Total Appointments
+						</div>
+						<div class="card-boby d-flex justify-content-center align-items-center bg-warning" style="height:100px;">
+							<h1>
+								{{ a }}
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-4">
+				<div class="department-card m-auto">
+					<div class="card mt-3">
+						<div class="card-header h5 bg-warning">
+							 Active Doctors
+						</div>
+						<div class="card-boby d-flex justify-content-center align-items-center bg-warning" style="height:100px;">
+							<h1>
+								{{ b }}
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-4">
+				<div class="department-card m-auto">
+					<div class="card mt-3">
+						<div class="card-header h5 bg-warning">
+							Inactive Doctors
+						</div>
+						<div class="card-boby d-flex justify-content-center align-items-center bg-warning" style="height:100px;">
+							<h1>
+								{{ c }}
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row mt-3 mx-auto">
+		<div class="col col-12">
+			<div class="card p-2">
+				<div class="card-header text-center bg-primary">
+					<h5>
+						Doctors
+					</h5>
+				</div>
+				<div class="card-body">
+					<table class="table table-hover table mt-1 w-100 border mx-auto">
+					  <thead>
+					  	{{ data }}
+					    <tr>
+					      <th scope="col">Name</th>
+					      <th scope="col">Phone</th>
+					      <th scope="col">Email</th>
+					      <th scope="col">Gender</th>
+					      <th scope="col">Age</th>
+					      <th scope="col">Status</th>
+					      <th scope="col">Department</th>
+					      <th scope="col">Attendence</th>
+					      <th scope="col">Salary</th>
+					      <th scope="col">Update</th>
+					      <th scope="col">Delete</th>
+
+					    </tr>
+					  </thead>
+					  <tbody>
+					    
+					    {% for i in doctor %}
+						    <tr>
+						      <td>{{ i.doctor.user_category.username }}</td>
+						      <td>{{ i.phone }}</td>
+						      <td>{{ i.doctor.user_category.email }}</td>
+						      <td>{{ i.gender }}</td>
+						      <td>{{ i.age }}</td>
+						      <td>{{ i.is_working }}</td>
+						      <td>{{ i.department }}</td>
+						      <td>{{ i.attendence }}</td>
+						      <td>{{ i.salary }}</td>
+
+						      <td>
+						      	<a href="{% url 'main:doctor_profile_hr' id=i.doctor.user_category.id %}" class="btn btn-outline-primary p-1">Update</a>
+						      </td>
+						      <td>
+						      	<a href="{% url 'main:confirm_deletes_hr' id=i.doctor.user_category.id %}" class="btn btn-outline-danger p-1">Delete</a>
+						      </td>
+
+						    </tr>
+						{% endfor %}
+
+					  </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+

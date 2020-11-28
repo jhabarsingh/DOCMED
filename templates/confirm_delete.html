@@ -1,0 +1,12 @@
+{% extends 'home.html' %}
+
+{% block content %}
+	<p class="lead text-center">
+		Are You Sure You Want To Delete ?
+	</p>
+	<form class="container w-75  jumbotron mt-4 text-center" id="login" method="POST">
+		{% csrf_token %}
+		<input type="submit" value="CONFIRM" name="ok" class="btn btn-outline-primary mt-4 mr-5">
+		<input type="submit" value="CANCEL" name="cancel" class="btn btn-outline-danger mt-4 ml-5">
+	</form>
+{% endblock %}

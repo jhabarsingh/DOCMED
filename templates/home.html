@@ -1,0 +1,95 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+	<div id="home" style="min-height:calc(90vh);">
+			<div class="row container m-auto">
+				<div class="col d-none d-sm-none d-md-block col-md-6" style="position: relative;">
+					<img src="{% static 'image/docter1.jpg' %}" class="docter " />
+					<img src="{% static 'image/docter4.jpg' %}" class="docter " />
+				</div>
+				<div class="col col-12 col-md-6 pt-5">
+						<p class="font-weight-bold">Welcome To Docmed<p>
+						<hr class="ml-0 bg-primary" style="width:10%;padding-top:1px;position:relative;bottom:10px;">
+						<h3>Best Care For Your</h3>
+						<h3 style="position: relative;bottom:5px;">Good Health</h3>
+						<p class="text-justify w-75 text-danger">
+							Esteem spirit temper to say	adious who direct esteem 
+							it asteems luckily or picture placing drawing apartments
+							frequently or motionless or resonable projecting expression 
+						</p>
+						<p>
+							<i class="far fa-check-circle"></i>
+							<small class="text-muted font-weight-bold ml-2">Apartments frequently or motionless</small >
+							<br>
+							<i class="far fa-check-circle"></i>
+							<small class="text-muted font-weight-bold ml-2">Duis aute irune dolor in reprehenderit in voluptate</small >
+							<br>
+							<i class="far fa-check-circle"></i>
+							<small class="text-muted font-weight-bold ml-2">Voluptatem quia valaptus sit aspernatur </small >
+							<br>
+						</p>
+						<button class="btn btn-outline-primary mx-auto">Lean More</button>
+				</div>
+			</div>
+	</div>
+
+	<div class="departments" id="department" style="min-height:100vh;">
+		<h3 class="text-center pt-2">Our Departments</h3>
+		<hr class="bg-primary" style="width: 3%;padding-top: 1px;position: relative;bottom: 5px;">
+		<p class="text-muted text-center font-weight-bold">
+			Estoom spirit tempair to say adious who direct asteem <br>
+			it esteems luckily or picture placing drawing 
+		</p>
+
+		{% block card%}{% endblock %}
+
+	</div>
+	
+	<!-- ending -->
+
+	<div class="end container" style="min-height:100vh">
+		<div class="d-flex justify-content-between py-4">
+			<h5 class="font-weight-bolder">
+				Excellent Scerives
+				<hr class="w-50 bg-primary ml-0">
+			</h5>
+			<h5 class="font-weight-bolder">
+				Qualified Doctor
+				<hr class="w-50 bg-primary ml-0">			
+			</h5>
+			<h5 class="font-weight-bolder">
+				Emergency Departments
+				<hr class="w-50 bg-primary ml-0">
+			</h5>
+		</div>
+
+		<div class="row mt-5 pt-4">
+			<div class="col ml-5">
+				<i class="fa fa-camera text-primary h1 mt-5" aria-hidden="true"></i>
+				<p>
+					<span class="font-weight-bolder lead mt-2 d-block">
+						Leading edge core for your family  
+					</span>
+					<br>
+					<small class="mt-0 text-muted d-block" style="font-size: .9rem;">
+						Estoom spirit tempair to say adious who direct asteem 
+						it esteems luckily or
+						<br>
+						Estoom spirit tempair to say adious who direct asteem 
+						it esteems luckily
+						<br>
+						on reasonable projecting expression
+					</small>
+				</p>
+			</div>
+			<div class="col offset-1 col-5 last-image" style="overflow: hidden;">
+				<img style="width:100%;overflow: hidden;" src="https://thumbs.dreamstime.com/b/portrait-caucasian-male-medical-doctor-lab-coat-stethoscope-177704487.jpg"
+				>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,41 @@
+{% extends 'home.html' %}
+
+{% block content %}
+	<div class="card">
+		<div class="card-header text-center bg-success mt-2">
+			Patients Details
+		</div>
+		<div class="card-body">
+			<table class="table table-hover table mt-4 w-75 border mx-auto">
+			  <thead>
+			    <tr>
+			      <th scope="col">S.No</th>
+			      <th scope="col">Date</th>
+			      <th scope="col">Time</th>
+			      <th scope="col">Doctor</th>
+			      <th scope="col">Patient</th>
+			      <th scope="col">Age</th>
+			      <th scope="col">Paid</th>
+			      <th scope="col">Invoice</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    
+			    {% for i in appointments %}
+				    <tr>
+				      <th scope="row">{{ forloop.counter }}</th>
+				      <td>{{ i.date }}</td>
+				      <td>{{ i.time }}</td>
+				      <td>{{ i.doctor }}</td>
+				      <td>{{ i.patient }}</td>
+				      <td>{{ i.age }}</td>
+				      <td>{{ i.payment }}</td>
+				      <td><a href="{% url 'main:invoice' id=i.id %}">Invoice</a></td>
+				    </tr>
+				{% endfor %}
+
+			  </tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+
+{% block content %}
+	<table class="table table-hover table mt-4 w-75 border mx-auto">
+	  <thead>
+	    <tr>
+	      <th scope="col">S.No</th>
+	      <th scope="col">Date</th>
+	      <th scope="col">Time</th>
+	      <th scope="col">Amount</th>
+	      <th scope="col">Invoice</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    
+	    {% for i in appointments %}
+		    <tr>
+		      <th scope="row">{{ forloop.counter }}</th>
+		      <td>{{ i.date }}</td>
+		      <td>{{ i.time }}</td>
+		      <td>{{ i.payment }} INR</td>
+		      <td>
+		      	<a href="{% url 'main:invoice' id=i.id %}">invoice</a>
+		      </td>
+		    </tr>
+		{% endfor %}
+
+	  </tbody>
+	</table>
+{% endblock %}

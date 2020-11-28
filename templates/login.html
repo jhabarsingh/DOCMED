@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+
+{% block content %}
+	{% if messages %}
+		{% for message in messages %}
+			<div class="alert alert-danger w-75 mx-auto mt-3" role="alert">
+				{{ message }}
+			</div>
+		{% endfor %}
+	{% endif %}
+	<form class="container w-75 jumbotron mt-4 py-2" id="login" method="POST">
+		{% csrf_token %}
+		<input type="text" name="username" class="form-control mt-4">
+		<input type="password" name="password" class="form-control mt-4">
+		<input type="submit" name="" class="btn btn-outline-primary mt-4">
+	</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+	{% if messages %}
+		{% for message in messages %}
+				<div class="alert alert-success w-75 mx-auto mt-3" role="alert">
+					{{ message }}
+				</div>
+		{% endfor %}
+	{% endif %}
+	<form class="container w-75 jumbotron mt-4 py-2" id="login" method="POST">
+		{% csrf_token %}
+		{{ form|crispy }}
+		<input type="submit" name="" class="btn btn-outline-primary mt-4">
+	</form>
+{% endblock %}
