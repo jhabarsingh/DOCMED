@@ -1,0 +1,17 @@
+Country,Age,Gender,Symptoms,Experiencing_Symptoms,Severity,Contact
+China,0-9,Male,"Fever,Tiredness,Dry-Cough,Difficulty-in-Breathing,Sore-Throat","Pains,Nasal-Congestion,Runny-Nose,Diarrhea",Mild,Yes
+Italy,10-19,Female,"Fever,Tiredness,Dry-Cough,Difficulty-in-Breathing","Pains,Nasal-Congestion,Runny-Nose",Moderate,No
+Iran,20-24,Transgender,"Fever,Tiredness,Dry-Cough","Pains,Nasal-Congestion",Severe,Dont-Know
+Republic of Korean,25-59,,"Fever,Tiredness",Pains,None,
+France,60+,,Fever,"Nasal-Congestion,Runny-Nose,Diarrhea",,
+Spain,,,"Tiredness,Dry-Cough,Difficulty-in-Breathing,Sore-Throat","Nasal-Congestion,Runny-Nose",,
+Germany,,,"Tiredness,Dry-Cough,Difficulty-in-Breathing",Nasal-Congestion,,
+UAE,,,"Tiredness,Dry-Cough","Runny-Nose,Diarrhea",,
+Other-EUR,,,Tiredness,Runny-Nose,,
+Other,,,"Dry-Cough,Difficulty-in-Breathing,Sore-Throat",Diarrhea,,
+,,,"Dry-Cough,Difficulty-in-Breathing",None_Experiencing,,
+,,,Dry-Cough,,,
+,,,"Difficulty-in-Breathing,Sore-Throat",,,
+,,,Difficulty-in-Breathing,,,
+,,,Sore-Throat,,,
+,,,None_Sympton,,,

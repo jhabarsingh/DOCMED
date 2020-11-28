@@ -10,12 +10,36 @@ from time import  sleep
 from main.utils import render_to_pdf
 from django.views.generic import View
 from django.contrib.auth.models import User
+from .trained_model import predict
 
 def home(request):
 	return render(request, "card.html")
 
 def covid_detection(request):
-	return render(request, "covid_detection.html") 
+	params = [0 for i in range(23)]
+	for i in range(1, 24, 1):
+		if(request.POST.get(str(i))):
+			params[i - 1] = 1
+	age = request.POST.get("12")
+	if age:	
+		if(int(age) > 0):
+			params[11] = 0
+			params[11 + int(age)] = 1
+	
+	params[10] = 0
+	gender = request.POST.get("17")
+	if gender:
+		if(int(gender) > 0):
+			params[17] = 0
+			params[17 + int(gender)] = 1
+	pred = predict(params)
+	if(request.POST):
+		return redirect("main:covid_result", pred[0])
+	return render(request, "covid_detection.html", context={"msg" : pred[0]}) 
+
+def covid_result(request, *args, **kwargs):
+	data = int(kwargs.get("result")) * 10
+	return render(request, "covid_result.html", {"result" : data})
 
 def contact(request):
 	return render(request, "contact.html")

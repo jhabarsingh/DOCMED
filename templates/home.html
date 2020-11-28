@@ -4,11 +4,11 @@
 {% block content %}
 	<div id="home" style="min-height:calc(90vh);">
 			<div class="row container m-auto">
-				<div class="col d-none d-sm-none d-md-block col-md-4" style="position: relative;perspective: 90px;top: 90px;">
-					<img src="{% static 'image/docter1.jpg' %}" class="docter "
+				<div class="col d-none d-sm-none d-md-block col-md-4 alibaba" style="position: relative;perspective: 90px;top: 90px;">
+					<img src="{% static 'image/docter1.jpg' %}" class="docter"
 						style="transform: rotateY(7deg); box-shadow: -4px -3px 2px rgba(0, 0, 0, .3);"
 					 />
-					<img src="{% static 'image/docter4.jpg' %}" class="docter "
+					<img src="{% static 'image/docter4.jpg' %}" class="docter"
 					style="transform: rotateY(7deg); box-shadow: -4px -3px 2px rgba(0, 0, 0, .3);" />
 				</div>
 				<div class="col col-12 col-md-8 pt-5 lead">
@@ -67,7 +67,7 @@
 			</h5>
 		</div>
 
-		<div class="row mt-5 pt-4">
+		<div class="row mt-5 pt-4 lead">
 			<div class="col ml-5">
 				<i class="fa fa-camera text-primary h1 mt-5" aria-hidden="true"></i>
 				<p>
@@ -85,12 +85,14 @@
 						on reasonable projecting expression
 					</small>
 				</p>
+				<iframe  style="display: inline-block;position: relative;bottom:150px;left:600px;" width="600" height="415" src="https://www.trackcorona.live/map" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
-			<div class="col offset-1 col-5 last-image" style="overflow: hidden;">
-				<img style="width:100%;overflow: hidden;" src="https://thumbs.dreamstime.com/b/portrait-caucasian-male-medical-doctor-lab-coat-stethoscope-177704487.jpg"
-				>
-			</div>
+			
 		</div>
+		<!-- <div class="col offset-1 col-5 last-image" style="overflow: hidden;position: relative;bottom: 500px;">
+				<img style="width:100%;overflow: hidden;" src="https://image.freepik.com/free-vector/thank-you-doctors-nurses_23-2148497069.jpg"
+				>
+			</div> -->
 	</div>
 
 {% endblock %}

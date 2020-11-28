@@ -1,0 +1,187 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+	<style>
+
+		.submission {
+			transition: 300ms linear;
+		}
+
+		.submission:hover {
+			cursor: pointer
+			transform: translateY(-2px);
+			transition: 300ms linear;
+		}
+		.form-control {
+			box-shadow: -1px 3px 3px rgba(0, 0, 0, .3);
+		}
+	</style>
+	<div style="background: lightgreen;">
+		<h1 class="text-muted text-uppercase text-center p-4 h2">Tick The Symptoms you have </h1>
+		<form style="padding: 5px; max-width:400px;margin: auto;background;" class="pt-2 text-center" method="POST">
+			{% csrf_token %}
+			<div class="form-group lead" >
+			    <div class="submission px-4 py-1" style="box-shadow: 2px 3px 3px rgba(0, 0, 0, .3);display: flex!important; justify-content: space-between!important;">
+			    	<div class="" style="font-weight:bolder">Fever</div>
+					    <div class="">
+					      <div class="form-check">
+					        <input class="form-check-input" type="checkbox" style="width:20px;height: 20px;" id="gridCheck1"  name="1">
+					      </div>
+					    </div>
+					  </div>
+						
+						<!-- Tiredeness -->
+				    <div class="submission px-4 py-2" style="box-shadow: 2px 3px 3px rgba(0, 0, 0, .3);display: flex!important; justify-content: space-between!important;">
+			    	<div class="" style="font-weight:bolder">Tiredness</div>
+					    <div class="">
+					      <div class="form-check">
+					        <input class="form-check-input" type="checkbox" style="width:20px;height: 20px;" id="gridCheck1"  name="2">
+					      </div>
+					    </div>
+					  </div>
+
+					  <!-- dry cough -->
+					  <div class="submission px-4 py-2" style="box-shadow: 2px 3px 3px rgba(0, 0, 0, .3);display: flex!important; justify-content: space-between!important;">
+			    	<div class="" style="font-weight:bolder">Dry Cough</div>
+					    <div class="">
+					      <div class="form-check">
+					        <input class="form-check-input" type="checkbox" style="width:20px;height: 20px;" id="gridCheck1" name="3">
+					      </div>
+					    </div>
+					  </div>
+
+					  <!-- breathing issue -->
+
+					   <div class="submission px-4 py-2" style="box-shadow: 2px 3px 3px rgba(0, 0, 0, .3);display: flex!important; justify-content: space-between!important;">
+			    	<div class="" style="font-weight:bolder">Breathing Issue</div>
+					    <div class="">
+					      <div class="form-check">
+					        <input class="form-check-input" type="checkbox" style="width:20px;height: 20px;" id="gridCheck1" name="4">
+					      </div>
+					    </div>
+					  </div>
+
+					  <!-- sore throat	 -->
+
+					    <div class="submission px-4 py-2" style="box-shadow: 2px 3px 3px rgba(0, 0, 0, .3);display: flex!important; justify-content: space-between!important;">
+			    	<div class="" style="font-weight:bolder">Sore Throat</div>
+					    <div class="">
+					      <div class="form-check">
+					        <input class="form-check-input" type="checkbox" style="width:20px;height: 20px;" id="gridCheck1" name="5">
+					      </div>
+					    </div>
+					  </div>
+
+					  <!-- No Symptoms -->
+
+					    <div class="" >
+			    	    <div class="">
+					      <div class="form-check">
+					        <input class="form-check-input" type="hidden" style="width:20px;height: 20px;" id="gridCheck1" name="6">
+					      </div>
+					    </div>
+					  </div>
+
+					  <!-- Body Pain -->
+
+					    <div class="submission px-4 py-2" style="box-shadow: 2px 3px 3px rgba(0, 0, 0, .3);display: flex!important; justify-content: space-between!important;">
+			    	<div class="" style="font-weight:bolder">Pain</div>
+					    <div class="">
+					      <div class="form-check">
+					        <input class="form-check-input" type="checkbox" style="width:20px;height: 20px;" id="gridCheck1" name="7">
+					      </div>
+					    </div>
+					  </div>
+
+					  <!-- nasal congestion -->
+
+					  <div class="submission px-4 py-2" style="box-shadow: 2px 3px 3px rgba(0, 0, 0, .3);display: flex!important; justify-content: space-between!important;">
+			    	<div class="" style="font-weight:bolder">Nasal Congestion</div>
+					    <div class="">
+					      <div class="form-check">
+					        <input class="form-check-input" type="checkbox" style="width:20px;height: 20px;" id="gridCheck1" name="8">
+					      </div>
+					    </div>
+					  </div>
+
+					  <!-- runnong nose -->
+
+					  <div class="submission px-4 py-2" style="box-shadow: 2px 3px 3px rgba(0, 0, 0, .3);display: flex!important; justify-content: space-between!important;">
+			    	<div class="" style="font-weight:bolder">Running Nose</div>
+					    <div class="">
+					      <div class="form-check">
+					        <input class="form-check-input" type="checkbox" style="width:20px;height: 20px;" id="gridCheck1" name="9">
+					      </div>
+					    </div>
+					  </div>
+
+					  <!-- <Dirrehea></Dirrehea> -->
+						
+						<div class="submission px-4 py-2" style="box-shadow: 2px 3px 3px rgba(0, 0, 0, .3);display: flex!important; justify-content: space-between!important;">
+			    	<div class="" style="font-weight:bolder">Dirrhea</div>
+					    <div class="">
+					      <div class="form-check">
+					        <input class="form-check-input" type="checkbox" style="width:20px;height: 20px;" id="gridCheck1" name="10">
+					      </div>
+					    </div>
+					  </div>
+
+					  <!-- No experiencing -->
+
+					     <div class="" >
+			    	    <div class="">
+					      <div class="form-check">
+					        <input class="form-check-input" type="hidden" style="width:20px;height: 20px;" id="gridCheck1" name="11">
+					      </div>
+					    </div>
+					  </div>
+
+					  <!-- age -->
+
+					     <div class="submission px-4 py-2" style="box-shadow: 2px 3px 3px rgba(0, 0, 0, .3);display: flex!important; justify-content: space-between!important;">
+			    	<div class="" style="font-weight:bolder">Age</div>
+					    <div class="">
+					      <div class="form-check">
+					        <select class="form-control" type="checkbox" id="gridCheck1" name="12" style="position: relative;right: -5px;">
+					        	<option value="0">0 - 9</option>
+					        	<option value="1">10 - 19</option>
+					        	<option value="2" selected>20 - 24</option>
+					        	<option value="3">25 - 59</option>
+					        	<option value="4">60 + </option>
+					        </select>
+
+					      </div>
+					    </div>
+					  </div>
+
+
+					  <!-- gender -->
+
+
+					   <div class="submission px-4 py-2" style="box-shadow: 2px 3px 3px rgba(0, 0, 0, .3);display: flex!important; justify-content: space-between!important;">
+			    	<div class="" style="font-weight:bolder">Gender</div>
+					    <div class="">
+					      <div class="form-check">
+					        <select class="form-control" type="checkbox" id="gridCheck1" name="17" style="position: relative;right: -5px;">
+					        	<option value="0" selected>Male</option>
+					        	<option value="1">Female</option>
+					        	<option value="2">Transgender</option>
+				
+					        </select>
+
+					      </div>
+					    </div>
+					  </div>
+
+					  <div class="submission px-4 py-2" style="box-shadow: 2px 3px 3px rgba(0, 0, 0, 0);display: flex!important; justify-content: space-between!important;">
+
+					  		<input type="submit" class="form-control">
+					    </div>
+					  </div>
+					  
+			</div>
+			    
+		</form>
+	</div>
+{% endblock %}
