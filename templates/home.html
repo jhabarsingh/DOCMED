@@ -1,14 +1,17 @@
-{% extends 'index.html' %}
+	{% extends 'index.html' %}
 {% load static %}
 
 {% block content %}
 	<div id="home" style="min-height:calc(90vh);">
 			<div class="row container m-auto">
-				<div class="col d-none d-sm-none d-md-block col-md-6" style="position: relative;">
-					<img src="{% static 'image/docter1.jpg' %}" class="docter " />
-					<img src="{% static 'image/docter4.jpg' %}" class="docter " />
+				<div class="col d-none d-sm-none d-md-block col-md-4" style="position: relative;perspective: 90px;top: 90px;">
+					<img src="{% static 'image/docter1.jpg' %}" class="docter "
+						style="transform: rotateY(7deg); box-shadow: -4px -3px 2px rgba(0, 0, 0, .3);"
+					 />
+					<img src="{% static 'image/docter4.jpg' %}" class="docter "
+					style="transform: rotateY(7deg); box-shadow: -4px -3px 2px rgba(0, 0, 0, .3);" />
 				</div>
-				<div class="col col-12 col-md-6 pt-5">
+				<div class="col col-12 col-md-8 pt-5 lead">
 						<p class="font-weight-bold">Welcome To Docmed<p>
 						<hr class="ml-0 bg-primary" style="width:10%;padding-top:1px;position:relative;bottom:10px;">
 						<h3>Best Care For Your</h3>
@@ -29,7 +32,7 @@
 							<small class="text-muted font-weight-bold ml-2">Voluptatem quia valaptus sit aspernatur </small >
 							<br>
 						</p>
-						<button class="btn btn-outline-primary mx-auto">Lean More</button>
+						<button class="btn btn-outline-primary mx-auto">Register</button>
 				</div>
 			</div>
 	</div>
