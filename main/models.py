@@ -60,7 +60,7 @@ class Doctor(models.Model):
 	blood_group = models.CharField(choices=BLOOD, max_length=3, blank=True, null=True)
 	experience = models.IntegerField(blank=True, null=True)
 	age = models.IntegerField(blank=True, null=True)
-	is_working = models.BooleanField(blank=True, null=True)
+	is_working = models.NullBooleanField(blank=True, null=True)
 	department = models.CharField(blank=True, null=True, max_length=100)
 	salary = models.IntegerField(blank=True, null=True)
 	attendence = models.IntegerField(blank=True, null=True)

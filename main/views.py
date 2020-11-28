@@ -14,6 +14,8 @@ from django.contrib.auth.models import User
 def home(request):
 	return render(request, "card.html")
 
+def covid_detection(request):
+	return render(request, "covid_detection.html") 
 
 def contact(request):
 	return render(request, "contact.html")
