@@ -53,9 +53,17 @@
 		<div style="position:relative; top: 250px;text-align: center;">
 			<button class="btn btn-outline-primary btn-lg"><a href="{% url 'main:register' %}" style="text-decoration: none;">Sign In</a></button>
 			<button class="btn btn-outline-primary btn-lg ml-3"><a href="{% url 'main:login' %}" style="text-decoration: none;">Login</a></button>
-			<div class="h4 text-muted pt-5">
+			<div class="h4 text-muted pt-4">
 				Login To our Website And have an <br>
-				Online appointment with the near By doctor.
+				Online appointment with the near by doctor.
+			</div>
+
+			<div class="h5  pt-4">
+				<b>Note</b>  <br>
+				You have <span style="color:red;font-weight: bolder;font-size:30px;">{{result}}%</span> Chances of Having 
+				<button type="button" class="btn btn-primary">
+				  COVID-19 
+				</button>
 			</div>
 		</div>
 </div>

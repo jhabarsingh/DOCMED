@@ -11,7 +11,8 @@
 					<hr class="bg-secondary w-25 ml-0">
 				</h4>
 				<br>
-				<form action="">
+				<form action="" method="POST">
+					{% csrf_token %}
 					<div class="row">
 						<div class="col col-6 ">
 							<input type="text" class="form-control" name="name" placeholder="Name">
@@ -23,7 +24,7 @@
 							<input type="text"  class="form-control" name="subject" placeholder="Subject">
 						</div>
 						<div class="col col-12 mt-4">
-		 					<textarea class="form-control" placeholder="Message" style="height:200px;"></textarea>
+		 					<textarea class="form-control" placeholder="Message" style="height:200px;" name="message"></textarea>
 						</div>
 						<div class="col col-12 mt-4">
 							<input type="submit" name="submit" class="btn btn-outline-primary">

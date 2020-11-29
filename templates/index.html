@@ -47,11 +47,15 @@
       defer
     ></script>
 	<div style="min-height:10vh;">
-			
+			<style>
+				.docmed {
+
+				}
+			</style>
 
 			<div class="sec-nav py-3" style="font-size: 20px; position: fixed;width: 100%;z-index: 20;">
 				<img src="{% static 'image/main_logo.jpg' %}" class="main_logo">
-				<span>Docmed</span>
+				<span style="color:white" class="docmed d-none d-md-inline mr-3">Docmed</span>
 				<div class="d-inline-block">
 					<a href="{% url 'main:home' %}" class="mx-2 text-light">Home</a>
 					<a href="{% url 'main:covid_detection' %}" class="mx-2 text-light covid">Detect Covid</a>
@@ -61,6 +65,7 @@
 						<a href="{% url 'main:patient_payment' %}" class="mx-2 text-light">Invoice & Payment</a>
 						<a href="{% url 'main:patient_medical' %}" class="mx-2 text-light">Medical History</a>
 						<a href="{% url 'main:patient_profile' %}" class="mx-2 text-light">Profile</a>
+						<a href="{% url 'main:doctor_list' %}" class="mx-2 text-light">Doctors</a>
 					{% elif request.user.user_category.is_doctor %}
 						<a href="{% url 'main:doctor_appointment' %}" class="mx-2 text-light">Appointment</a>
 						<a href="{% url 'main:doctor_prescriptions' %}" class="mx-2 text-light">Prescription</a>
@@ -76,8 +81,8 @@
 					{% if user.is_authenticated %}
 						<a href="{% url 'main:logout' %}" class="mx-2 text-light">Logout</a>	
 					{% else %}
-						<a href="{% url 'main:register' %}" class="mx-2 text-light">Register</a>
-						<a href="{% url 'main:login' %}" class="mx-2 text-light">Login</a>
+						<a href="{% url 'main:register' %}" class="mx-2 text-light">Sign Up</a>
+						<a href="{% url 'main:login' %}" class="mx-2 text-light">Sign In</a>
 					{% endif %}
 
 				</div>

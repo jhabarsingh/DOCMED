@@ -7,10 +7,15 @@
 				<div class="d-flex justify-content-center">
 					<div class="mr-4 btn btn-outline-primary">{{ i.patient }}</div>
 				</div>	
-				<small class="lead text-muted">
+				<b class="h5 mr-4" >problem: </b><small class="lead text-muted">
+					{{ i.problem }}
+				</small>
+				<br>
+				<b class="h5 mr-4" >Symtoms: </b><small class="lead text-muted">
 					{{ i.symptom }}
 				</small>
-				<p>
+				<br>
+				<b  class="h5 mr-4">prescription: </b><p style="display: inline-block;">
 					{{ i.prescription}}
 				</p>
 			</div>

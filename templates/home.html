@@ -2,37 +2,62 @@
 {% load static %}
 
 {% block content %}
+<style>
+	.alas:hover, .alas:hover > a {
+		color: white;
+	}
+
+	.doc {
+		color: orange;
+		text-transform: uppercase;
+	}
+
+	@keyframes dj {
+		from {
+			transform: rotate(10deg);
+		}
+		to {
+			transform: rotate(-10deg);
+		}
+	}
+</style>
 	<div id="home" style="min-height:calc(90vh);">
 			<div class="row container m-auto">
 				<div class="col d-none d-sm-none d-md-block col-md-4 alibaba" style="position: relative;perspective: 90px;top: 90px;">
-					<img src="{% static 'image/docter1.jpg' %}" class="docter"
+					<img src="https://png.pngtree.com/png-vector/20200501/ourlarge/pngtree-corona-virus-svg-art-font-png-image_92286.jpg" class="docter"
 						style="transform: rotateY(7deg); box-shadow: -4px -3px 2px rgba(0, 0, 0, .3);"
 					 />
 					<img src="{% static 'image/docter4.jpg' %}" class="docter"
 					style="transform: rotateY(7deg); box-shadow: -4px -3px 2px rgba(0, 0, 0, .3);" />
 				</div>
 				<div class="col col-12 col-md-8 pt-5 lead">
-						<p class="font-weight-bold">Welcome To Docmed<p>
+						<p class="font-weight-bold">Welcome To <span class="doc">Docmed</span><p>
 						<hr class="ml-0 bg-primary" style="width:10%;padding-top:1px;position:relative;bottom:10px;">
 						<h3>Best Care For Your</h3>
 						<h3 style="position: relative;bottom:5px;">Good Health</h3>
 						<p class="text-justify w-75 text-danger">
-							Esteem spirit temper to say	adious who direct esteem 
-							it asteems luckily or picture placing drawing apartments
-							frequently or motionless or resonable projecting expression 
+							Are you one of those who have a very busy schedule and don't even have a time to take care of your health. Then you have landed on the right place.
 						</p>
 						<p>
 							<i class="far fa-check-circle"></i>
-							<small class="text-muted font-weight-bold ml-2">Apartments frequently or motionless</small >
+							<small class="text-muted font-weight-bold ml-2">We have doctor from different corners of the world</small >
 							<br>
 							<i class="far fa-check-circle"></i>
-							<small class="text-muted font-weight-bold ml-2">Duis aute irune dolor in reprehenderit in voluptate</small >
+							<small class="text-muted font-weight-bold ml-2">
+								<b style="color:black">COVAT</b> chat bot who is always there to clear your queries
+							</small >
 							<br>
 							<i class="far fa-check-circle"></i>
-							<small class="text-muted font-weight-bold ml-2">Voluptatem quia valaptus sit aspernatur </small >
+							<small class="text-muted font-weight-bold ml-2">
+								<b style="color:black">ML Model</b> to help you detect covid based on your symptoms.
+							</small >
 							<br>
+							<small class="text-muted font-weight-bold ml-2">
+								Have your personal docter who is always there to assist you.
+							</small >
 						</p>
-						<button class="btn btn-outline-primary mx-auto">Register</button>
+						<button class="btn btn-outline-primary btn-md alas"><a href="{% url 'main:register' %}" style="text-decoration: none;">Sign Up</a></button>
+						<button class="btn btn-outline-primary btn-md ml-4 alas"><a href="{% url 'main:login' %}" style="text-decoration: none;">Sign In</a></button>
 				</div>
 			</div>
 	</div>
@@ -54,7 +79,7 @@
 	<div class="end container" style="min-height:100vh">
 		<div class="d-flex justify-content-between py-4">
 			<h5 class="font-weight-bolder">
-				Excellent Scerives
+				24 X 7 Service
 				<hr class="w-50 bg-primary ml-0">
 			</h5>
 			<h5 class="font-weight-bolder">
@@ -62,7 +87,7 @@
 				<hr class="w-50 bg-primary ml-0">			
 			</h5>
 			<h5 class="font-weight-bolder">
-				Emergency Departments
+				Personal Assistance
 				<hr class="w-50 bg-primary ml-0">
 			</h5>
 		</div>
@@ -71,21 +96,34 @@
 			<div class="col ml-5">
 				<i class="fa fa-camera text-primary h1 mt-5" aria-hidden="true"></i>
 				<p>
-					<span class="font-weight-bolder lead mt-2 d-block">
-						Leading edge core for your family  
+					<span class="font-weight-bolder font-weight-bold lead mt-2 d-block">
+						Let's Fight this pandemic together 
 					</span>
 					<br>
-					<small class="mt-0 text-muted d-block" style="font-size: .9rem;">
-						Estoom spirit tempair to say adious who direct asteem 
-						it esteems luckily or
+					<small class="mt-0 text-muted d-block lead" style="font-size: 1rem;">
+						We the <b style="font-weight:bold;color:black">Docmed</b>  members understand what you all are 
 						<br>
-						Estoom spirit tempair to say adious who direct asteem 
-						it esteems luckily
+						going through during this pandemic time. But it's
+						something 
 						<br>
-						on reasonable projecting expression
+						which happend all of a sudden but it's not the end of the world
+						<br>
+						So let's take an oath that we won't do something which 
+						<br>
+						would make the sitation even more worse.
+						<br>
+						So we request you to follow the official guidelines and 
+						<br>
+						stay safe
+						<br>
+						<br>
+						If you face any issue during this pandemic time then
+						<br> 
+						Docmed is always there to help you.
+
 					</small>
 				</p>
-				<iframe  style="display: inline-block;position: relative;bottom:150px;left:600px;" width="600" height="415" src="https://www.trackcorona.live/map" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe  style="display: inline-block;position: relative;bottom:310px;left:600px;" width="600" height="415" src="https://www.trackcorona.live/map" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 			
 		</div>

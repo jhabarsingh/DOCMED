@@ -1,0 +1,89 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<style>
+	.cards:hover {
+		transition: 100ms linear;
+		transform: translateY(-4px) scale(1.1);
+	}
+</style>
+	<div style="background: lightgreen;padding-top: 15px;min-height: 100vh;">
+		<div class="" style="margin: auto;text-align: center;margin: 20px auto;">
+		<input type="text" placeholder="city, district, state" class="p-2" name="alala" id="">
+		<input type="submit" name="Search" value="Search" class="btn btn-primary btn-md p-2" style="position: relative;bottom:1px" id="">
+	</div>
+	{% for contact in page_obj %}
+	    {# Each "contact" is a Contact model object. #}
+	    <div style="width:500px;margin:auto;box-shadow: 3px -2px 4px rgba(0, 0, 0, .2);display: flex;justify-content: space-between;"
+	    class="py-3 my-3 card">
+	    	<div class="" style="border-radius: 50%; width:70px;height:70px;background: white;margin: auto;box-shadow: 3px -2px 4px rgba(0, 0, 0, .2);">
+	    		<img src="https://robohash.org/{{contact}}" alt="" width="60px">
+	    	</div>
+	    	<div class="px-4" width="470px">
+	    		<div style="display: flex;justify-content: space-between;" >
+		    		<b>Name</b>
+		    		<b class="text-muted">{{ contact|upper }}</b>
+		    	</div>
+
+		    	<div style="display: flex;justify-content: space-between;" >
+		    		<b>Mobile</b>
+		    		<b class="">{{ contact.phone|upper }}</b>
+		    	</div>
+
+		    	<div style="display: flex;justify-content: space-between;" >
+		    		<b>UPI id</b>
+		    		<b class="text-muted">{{ contact.upi_id|upper }}</b>
+		    	</div>
+
+		    	<div style="display: flex;justify-content: space-between;" >
+		    		<b>Gender</b>
+		    		<b class="">{{ contact.gender }}</b>
+		    	</div>
+		    	<div style="display: flex;justify-content: space-between;" >
+		    		<b>City</b>
+		    		<b class="">{{ contact.city }}</b>
+		    	</div>
+		    	<div style="display: flex;justify-content: space-between;" >
+		    		<b>Experience</b>
+		    		<b class="">{{ contact.experience }}</b>
+		    	</div>
+
+		    	<form method="POST" class="text-center">	    		
+			    	{% csrf_token %}
+			    	<input type="submit" value="message" class="message btn btn-outline-secondary m-auto text-center" style="margin: auto;">
+			    	<input type="hidden" name="id" value="{{contact}}" id="">
+		    	</form>
+		    </div>
+	    </div>
+	{% endfor %}
+
+	<div class="pagination" style="text-align: center;margin: auto;width:300px;padding:10px 30px;background: lightgreen;margin: 10px auto;">
+	    <span class="step-links" style="display:flex;justify-content: space-around;width: 100%;">
+	        <div>
+	        	{% if page_obj.has_previous %}
+		            <a href="?page=1&search={{search}}">&laquo; first</a>
+		            <a href="?page={{ page_obj.previous_page_number }}&search={{search}}">previous</a>
+		        {% endif %}
+
+		        <span class="current">
+		            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+		        </span>
+	        </div>
+
+	        <div>
+	        	{% if page_obj.has_next %}
+		            <a href="?page={{ page_obj.next_page_number }}&search={{search}}">next</a>
+		            <a href="?page={{ page_obj.paginator.num_pages }}&search={{search}}">last &raquo;</a>
+		        {% endif %}
+	        </div>
+	    </span>
+	</div>
+
+	</div>
+
+	<script type="text/javascript">
+		document.querySelector("[name='Search']").addEventListener("click", () => {
+			window.location.href = "?page=1&search=" + document.querySelector("[name='alala']").value
+		})
+	</script>
+{% endblock %}

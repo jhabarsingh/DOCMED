@@ -11,6 +11,9 @@ from main.utils import render_to_pdf
 from django.views.generic import View
 from django.contrib.auth.models import User
 from .trained_model import predict
+from .models import Contact
+from django.core.paginator import Paginator
+from django.db.models import Q
 
 def home(request):
 	return render(request, "card.html")
@@ -34,6 +37,14 @@ def covid_detection(request):
 			params[17 + int(gender)] = 1
 	pred = predict(params)
 	if(request.POST):
+		p = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+		counter = 0
+		for i in range(23):
+			if(p[i] != params[i]):
+				break
+			counter +=1
+		if(counter == 23):
+			pred[0] = 0
 		return redirect("main:covid_result", pred[0])
 	return render(request, "covid_detection.html", context={"msg" : pred[0]}) 
 
@@ -42,10 +53,21 @@ def covid_result(request, *args, **kwargs):
 	return render(request, "covid_result.html", {"result" : data})
 
 def contact(request):
+	if request.POST:
+		name = request.POST.get("name")
+		email = request.POST.get("email")
+		subject = request.POST.get("subject")
+		message = request.POST.get("message")
+		if(not len(name) or not len(email) or not len(subject) or not len(message)):
+			pass
+		else:
+			Contact.objects.create(name=name, email=email, subject=subject, message=message)
 	return render(request, "contact.html")
 
 
 def register(request):
+	if request.user.is_authenticated:
+		return redirect("main:home")
 	form = UserForm(request.POST or None)
 	if form.is_valid():
 		username = form.cleaned_data.get("username")
@@ -67,8 +89,49 @@ def register(request):
 def user_logout(request):
 	return HttpResponseRedirect(reverse("main:confirm_logout"))
 
+@login_required
+@is_valid_patient
+def doctor_list(request):
+	if request.user.is_authenticated:
+		contact_list = Doctor.objects.all()
+		search = request.GET.get("search")
+		if(request.method == "POST"):
+			doctor_babu = request.POST.get("id")
+			return redirect("main:message", doctor=doctor_babu)
+		if(search and search.lower() != "none"):
+			contact_list = Doctor.objects.filter(Q(city__icontains=search) | 
+													Q(district__icontains=search) | Q(state__icontains=search))
+		paginator = Paginator(contact_list, 10)
+		page_number = request.GET.get('page')
+		page_obj = paginator.get_page(page_number)
+		return render(request, "doctor_list.html", context={"page_obj": page_obj, "search": search})
+	return render(request, "main:home")
+
+@login_required
+@is_valid_patient
+def message(request, *args, **kwargs):
+
+	if request.user.is_authenticated:
+		if(request.method == "POST"):
+			problem = request.POST.get("problem")
+			symptoms = request.POST.get("symtoms")
+			patient = request.user.user_category.patient
+			doctor = User.objects.filter(username=kwargs.get("doctor")).first().user_category.doctor
+
+			appoint = Appointment.objects.create(patient=patient, doctor=doctor)
+			Prescription.objects.create(appoint=appoint, patient=patient, doctor=doctor, problem=problem, symptom=symptoms)
+			return redirect("main:patient_appointment")
+		data = {
+			"doctor" : kwargs.get("doctor")
+		}
+		return render(request, "message.html", context=data)
+	return render(request, "main:home")
+
+
 
 def user_login(request):
+	if request.user.is_authenticated:
+		return redirect("main:home")
 	if request.method == "POST":
 		username = request.POST.get("username")
 		password = request.POST.get("password")
@@ -177,9 +240,14 @@ def doctor_prescriptions(request):
 @login_required
 def doctor_prescription(request, id):
 	if request.user.user_category.is_doctor:
+		problem = Prescription.objects.filter(appoint=Appointment.objects.filter(id=id).first()).first().problem
+		symptom = Prescription.objects.filter(appoint=Appointment.objects.filter(id=id).first()).first().symptom
 		form = PrescriptionForm(request.POST or None, initial={	"doctor":request.user.user_category.doctor, 
 																"patient": Appointment.objects.get(id=id).patient,
 																"appoint":Appointment.objects.get(id=id)
+																,
+																"problem":problem,
+																"symptom":symptom
 																}
 								)
 		if form.is_valid():

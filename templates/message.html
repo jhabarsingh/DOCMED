@@ -1,0 +1,31 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+	.jumbotron {
+		background: lightgreen;
+	}
+</style>
+	{% if messages %}
+		{% for message in messages %}
+				<div class="alert alert-success w-75 mx-auto mt-3" role="alert">
+					{{ message }}
+				</div>
+		{% endfor %}
+	{% endif %}
+	<form class="container w-75 jumbotron mt-4 py-2" id="login" method="POST">
+		{% csrf_token %}
+		<h3 class="text-center"><span class="text-muted">Doctor </span>{{doctor | upper}}</h3>
+		<div class="form-group">
+		    <label for="exampleFormControlTextarea1" class="h5">Problem</label>
+		    <textarea name="problem" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+		 </div>
+		
+		<div class="form-group">
+		    <label for="exampleFormControlTextarea1" class="h5">Symtoms</label>
+		    <textarea name="symtoms" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+		  </div>
+		<input type="submit" name="" class=" ml-0 btn btn-outline-primary mt-4">
+	</form>
+{% endblock %}

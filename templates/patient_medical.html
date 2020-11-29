@@ -1,6 +1,11 @@
 {% extends 'home.html' %}
 
 {% block content %}
+<style>
+	.jumbotron {
+		background: lightgreen!important;
+	}
+</style>
 	<div class="row mt-4 mx-auto w-75">
 		{% for i in appointments %}
 			<div class="col col-12 container jumbotron my-4 special-effect">
@@ -14,6 +19,10 @@
 				<p>
 					{{ i.prescription}}
 				</p>
+				
+				<b>
+					Doctor: &nbsp;&nbsp;
+				</b> {{ i.doctor|upper }}
 			</div>
 		{% endfor %}
 	</div>
