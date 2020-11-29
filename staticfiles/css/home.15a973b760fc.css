@@ -1,0 +1,103 @@
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: ubuntu;
+	font-size: 14px;
+	scroll-behavior: smooth;
+}
+
+.nav-parent{
+	background: whitesmoke;
+	padding: 10px;
+}
+
+.sec-nav{
+	background: rgba(0, 0, 0, .6);
+}
+
+.sec-nav > span{
+	font-weight: bolder;
+	font-size: 1.3rem;
+}
+
+.sec-nav > div > a{
+	font-weight: normal;
+	font-size: .9rem;
+	text-decoration: none;
+}
+
+.main_logo{
+	width: 35px;
+	height: 30px;
+	margin-left: 10px;
+	margin-top: 4px;
+	margin-bottom: 4px; 
+	border-radius: 4px;
+	margin-right: 5px;
+}
+
+
+.docter{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+}
+
+
+.docter:nth-child(1){
+	top: 130px;
+	left: 40%;
+	z-index: 3;
+}
+
+.docter:nth-child(2){
+	top: 50px;
+	left: 20%;
+	z-index: 1;
+}
+
+.department-card{
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+	transition: 100ms linear;
+}
+
+.department-card:hover{
+	box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+	transform: translateY(-4px);
+	transition: 100ms linear;
+}
+
+
+.card-image{
+	transition: 200ms linear;
+}
+
+.card-image:hover{
+	transform: scale(1.1);
+	transition: 200ms linear;
+}
+
+.corousal{
+	position: absolute;
+	top: 100px;
+	width: 100%;
+	text-align: center;
+}
+
+
+#map {
+		padding: 10px;
+		width: 90%;
+		margin: 10px auto;
+        height: 80vh;
+}
+
+.last-image >img{
+	transition: 100ms linear;
+}
+
+.last-image > img:hover{
+	transform: scale(1.1);
+	transition: 100ms linear;
+}
