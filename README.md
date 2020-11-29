@@ -13,7 +13,7 @@
 ---
  
 #### Video Link
-[Vide](https://drive.google.com/file/d/1EBM0fIkShnjhjss7qcY2Xc84tgdfsL84/view?usp=drivesdk)
+[Video](https://drive.google.com/file/d/1EBM0fIkShnjhjss7qcY2Xc84tgdfsL84/view?usp=drivesdk)
 
 #### Website Link
 [Website](https://rocky-chamber-29739.herokuapp.com/)
