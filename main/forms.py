@@ -31,7 +31,7 @@ class PatientForm(forms.ModelForm):
 class DoctorForm(forms.ModelForm):
 	class Meta:
 		model = Doctor
-		fields = ["doctor", "phone", "gender", "address", "blood_group", "department", "experience"]
+		fields = ["doctor", "phone", "gender", "city", "district", "state", "address", "blood_group", "department", "experience"]
 
 class DoctorForm1(forms.ModelForm):
 	class Meta:
