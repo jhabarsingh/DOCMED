@@ -1,11 +1,16 @@
 from django.shortcuts import render, redirect, reverse
-from main.forms import UserForm, PatientForm, DoctorForm, UserProfileForm, UserProfileForm1, AppointmentForm, PrescriptionForm, DoctorForm1
+from main.forms import UserForm, PatientForm, DoctorForm, 
+     UserProfileForm, UserProfileForm1, AppointmentForm, 
+     PrescriptionForm, DoctorForm1
 from django.contrib import messages
-from main.models import UserCategory, Patient, Doctor, Appointment, Prescription
+from main.models import UserCategory, Patient, 
+     Doctor, Appointment, Prescription
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import  authenticate, login as auth_login , logout
+from django.contrib.auth import  authenticate, 
+     login as auth_login , logout
 from django.http import HttpResponse, HttpResponseRedirect
-from main.decorators import is_valid_patient, is_valid_doctor, is_valid_receptionist, is_valid_hr, is_valid_patientOrhr
+from main.decorators import is_valid_patient, is_valid_doctor, 
+     is_valid_receptionist, is_valid_hr, is_valid_patientOrhr
 from time import  sleep
 from main.utils import render_to_pdf
 from django.views.generic import View
