@@ -11,12 +11,17 @@ class UserForm(UserCreationForm):
 	designation = forms.ChoiceField(choices = DETAIL)
 	class Meta:
 		model = User
-		fields = ("first_name","last_name", "username", "email", "password1", "password2", "designation")
+		fields = ("first_name","last_name", "username", 
+				  	"email", "password1", "password2", 
+				  	"designation"
+				 )
 
 class UserProfileForm(UserCreationForm):
 	class Meta:
 		model = User
-		fields = ("first_name","last_name", "username", "email", "password1", "password2")
+		fields = ("first_name","last_name", "username", 
+					"email", "password1", "password2"
+				 )
 
 class UserProfileForm1(forms.ModelForm):
 	class Meta:
@@ -26,12 +31,17 @@ class UserProfileForm1(forms.ModelForm):
 class PatientForm(forms.ModelForm):
 	class Meta:
 		model = Patient
-		fields = ("phone", "gender", "address", "age", "blood_group")
+		fields = ("phone", "gender", "address", "age", 
+				   "blood_group"
+				 )
 
 class DoctorForm(forms.ModelForm):
 	class Meta:
 		model = Doctor
-		fields = ["doctor", "phone", "gender", "city", "district", "state", "address", "blood_group", "department", "experience"]
+		fields = ("doctor", "phone", "gender", "city", 
+		            "district", "state", "address", 
+		            "blood_group", "department", "experience"
+		         )	
 
 class DoctorForm1(forms.ModelForm):
 	class Meta:
@@ -46,4 +56,8 @@ class AppointmentForm(forms.ModelForm):
 class PrescriptionForm(forms.ModelForm):
 	class Meta:
 		model = Prescription
-		fields = ("patient","doctor","appoint", "problem", "symptom", "prescription")
+		fields = ("patient","doctor","appoint", "problem", 
+			        "symptom", "prescription"
+			     )
+
+
