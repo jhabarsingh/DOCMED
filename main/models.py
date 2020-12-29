@@ -30,7 +30,8 @@ STATUS = (
 
 
 class UserCategory(models.Model):
-	user_category = models.OneToOneField(User, on_delete=models.CASCADE, related_name="user_category")
+	user_category = models.OneToOneField(User, on_delete=models.CASCADE, 
+										related_name="user_category")
 	is_patient = models.BooleanField(default=False)
 	is_doctor = models.BooleanField(default=False)
 	is_receptionist = models.BooleanField(default=False)
@@ -40,7 +41,8 @@ class UserCategory(models.Model):
 		return self.user_category.username
 
 class Patient(models.Model):
-	patient = models.OneToOneField(UserCategory, on_delete = models.CASCADE, related_name="patient")
+	patient = models.OneToOneField(UserCategory, on_delete = models.CASCADE, 
+									related_name="patient")
 	phone = models.CharField(max_length=12, blank=True, null=True)
 	gender = models.CharField(choices=GENDER, max_length=1, blank=True, null=True)
 	age = models.IntegerField(blank=True, null=True)
@@ -57,7 +59,8 @@ class Contact(models.Model):
 	message = models.CharField(max_length=255)
 
 class Doctor(models.Model):
-	doctor = models.OneToOneField(UserCategory, on_delete = models.CASCADE, related_name="doctor")
+	doctor = models.OneToOneField(UserCategory, on_delete = models.CASCADE, 
+								  related_name="doctor")
 	phone = models.CharField(max_length=12, blank=True, null=True)
 	gender = models.CharField(choices=GENDER, max_length=1, blank=True, null=True)
 	upi_id = models.CharField(max_length=255, default="None")
@@ -69,7 +72,7 @@ class Doctor(models.Model):
 	blood_group = models.CharField(choices=BLOOD, max_length=3, blank=True, null=True)
 	experience = models.IntegerField(blank=True, null=True)
 	age = models.IntegerField(blank=True, null=True)
-	is_working = models.NullBooleanField(blank=True, null=True)
+	is_working = models.BooleanField(blank=True, null=True)
 	department = models.CharField(blank=True, null=True, max_length=100)
 	salary = models.IntegerField(blank=True, null=True)
 	attendence = models.IntegerField(blank=True, null=True)
@@ -82,8 +85,10 @@ class Doctor(models.Model):
 class Appointment(models.Model):
 	date = models.DateField(auto_now_add=True)
 	time = models.TimeField(auto_now_add=True)
-	patient = models.ForeignKey(Patient, on_delete=models.CASCADE, related_name="patient_appointment")
-	doctor = models.ForeignKey(Doctor, on_delete = models.CASCADE, null=True, blank=True, related_name="doctor_appointment")
+	patient = models.ForeignKey(Patient, on_delete=models.CASCADE, 
+		                        related_name="patient_appointment")
+	doctor = models.ForeignKey(Doctor, on_delete = models.CASCADE, null=True, 
+		                       blank=True, related_name="doctor_appointment")
 	status = models.CharField(default="p", max_length=1)
 	payment = models.IntegerField(blank=True, null=True)
 	
@@ -101,9 +106,12 @@ class Appointment(models.Model):
 
 
 class Prescription(models.Model):
-	appoint = models.OneToOneField(Appointment, on_delete=models.CASCADE, related_name="patient_appointment", blank=True, null=True)
-	patient = models.ForeignKey(Patient, on_delete = models.CASCADE, related_name="patient_prescription")
-	doctor = models.ForeignKey(Doctor, on_delete = models.CASCADE, related_name="doctor_prescription")
+	appoint = models.OneToOneField(Appointment, on_delete=models.CASCADE, 
+		                           related_name="patient_appointment", blank=True, null=True)
+	patient = models.ForeignKey(Patient, on_delete = models.CASCADE, 
+		                        related_name="patient_prescription")
+	doctor = models.ForeignKey(Doctor, on_delete = models.CASCADE, 
+		                       related_name="doctor_prescription")
 	problem = models.CharField(max_length=300)
 	symptom = models.CharField(max_length=200)
 	prescription = models.TextField()
