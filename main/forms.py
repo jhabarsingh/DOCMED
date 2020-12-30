@@ -8,12 +8,12 @@ DETAIL = (
 	("2", "Doctor"),
 )
 class UserForm(UserCreationForm):
-	designation = forms.ChoiceField(choices = DETAIL)
+	# designation = forms.ChoiceField(choices = DETAIL)
 	class Meta:
 		model = User
 		fields = ("first_name","last_name", "username", 
 				  	"email", "password1", "password2", 
-				  	"designation"
+				  	# "designation"
 				 )
 
 class UserProfileForm(UserCreationForm):
