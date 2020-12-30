@@ -1,16 +1,11 @@
 from django.shortcuts import render, redirect, reverse
-from main.forms import UserForm, PatientForm, DoctorForm, 
-     UserProfileForm, UserProfileForm1, AppointmentForm, 
-     PrescriptionForm, DoctorForm1
+from main.forms import UserForm, PatientForm, DoctorForm, UserProfileForm, UserProfileForm1, AppointmentForm, PrescriptionForm, DoctorForm1
 from django.contrib import messages
-from main.models import UserCategory, Patient, 
-     Doctor, Appointment, Prescription
+from main.models import UserCategory, Patient, Doctor, Appointment, Prescription
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import  authenticate, 
-     login as auth_login , logout
+from django.contrib.auth import  authenticate, login as auth_login , logout
 from django.http import HttpResponse, HttpResponseRedirect
-from main.decorators import is_valid_patient, is_valid_doctor, 
-     is_valid_receptionist, is_valid_hr, is_valid_patientOrhr
+from main.decorators import is_valid_patient, is_valid_doctor, is_valid_receptionist, is_valid_hr, is_valid_patientOrhr
 from time import  sleep
 from main.utils import render_to_pdf
 from django.views.generic import View
@@ -21,9 +16,15 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 
 def home(request):
+	"""
+	RENDERS HOME PAGE
+	"""
 	return render(request, "card.html")
 
 def covid_detection(request):
+	"""
+	COVID DETECTION ML MODEL LOGIC PART
+	"""
 	params = [0 for i in range(23)]
 	for i in range(1, 24, 1):
 		if(request.POST.get(str(i))):
@@ -54,10 +55,16 @@ def covid_detection(request):
 	return render(request, "covid_detection.html", context={"msg" : pred[0]}) 
 
 def covid_result(request, *args, **kwargs):
+	"""
+	RENDERS PAGE TO DISPLAY COVID RESULT
+	"""
 	data = int(kwargs.get("result")) * 10
 	return render(request, "covid_result.html", {"result" : data})
 
 def contact(request):
+	"""
+	PAGE TO RENDER CONTACT DETAILS 
+	"""
 	if request.POST:
 		name = request.POST.get("name")
 		email = request.POST.get("email")
@@ -71,13 +78,17 @@ def contact(request):
 
 
 def register(request):
+	"""
+	REGISTRATION PAGE FOR PATIENTS
+	"""
 	if request.user.is_authenticated:
 		return redirect("main:home")
 	form = UserForm(request.POST or None)
 	if form.is_valid():
 		username = form.cleaned_data.get("username")
-		des = form.cleaned_data.get("designation")
+		# des = form.cleaned_data.get("designation")
 		form.save()
+		des = "1"
 		if des == "1":
 			UserCategory.objects.create(user_category=form.instance, is_patient=True)
 		elif des == "2":
@@ -92,11 +103,17 @@ def register(request):
 
 @login_required
 def user_logout(request):
+	"""
+	RENDERS USER LOGOUT PAGE
+	"""
 	return HttpResponseRedirect(reverse("main:confirm_logout"))
 
 @login_required
 @is_valid_patient
 def doctor_list(request):
+	"""
+	RENDERS LIST OF DOCTORS
+	"""
 	if request.user.is_authenticated:
 		contact_list = Doctor.objects.all()
 		search = request.GET.get("search")
@@ -115,7 +132,9 @@ def doctor_list(request):
 @login_required
 @is_valid_patient
 def message(request, *args, **kwargs):
-
+	"""
+	RENDERS FORM THAT NEEDS TO BE FILLED BY PATIENT BEFORE CHECKUP
+	"""
 	if request.user.is_authenticated:
 		if(request.method == "POST"):
 			problem = request.POST.get("problem")
@@ -135,6 +154,9 @@ def message(request, *args, **kwargs):
 
 
 def user_login(request):
+	"""
+	RENDERS USER/PATIENT LOGIN FORM
+	"""
 	if request.user.is_authenticated:
 		return redirect("main:home")
 	if request.method == "POST":
@@ -155,7 +177,9 @@ def user_login(request):
 
 @login_required
 def confirm_logout(request):
-	
+	"""
+	RENDERS LOGOUT CONFIRM PAGE
+	"""
 	if request.POST.get("ok" or None):
 		logout(request)
 		return HttpResponseRedirect(reverse("main:home"))
@@ -166,6 +190,9 @@ def confirm_logout(request):
 @login_required
 @is_valid_patient
 def patient_profile(request):
+	"""
+	RENDERS PATIENT PROFILE TO BE UPDATED
+	"""
 	user_form = UserProfileForm(request.POST or None, instance=request.user)
 	patient_form = PatientForm(request.POST or None, instance=request.user.user_category.patient)
 	if patient_form.is_valid() and user_form.is_valid():
@@ -183,12 +210,18 @@ def patient_profile(request):
 @login_required
 @is_valid_patient
 def patient_appointment(request):
+	"""
+	RENDERS PATIENT APPOINTMENT FORM
+	"""
 	queryset = request.user.user_category.patient.patient_appointment.all()
 	return render(request, "patient_appointment.html", {"appointments": queryset})
 
 @login_required
 @is_valid_patient
 def patient_payment(request):
+	"""
+	RENDERS PATIENT PAYMENT FORM
+	"""
 	queryset = request.user.user_category.patient.patient_appointment.all()
 	return render(request, "patient_payment.html", {"appointments": queryset})
 
@@ -196,15 +229,21 @@ def patient_payment(request):
 @login_required
 @is_valid_patient
 def patient_medical(request):
+	"""
+	RENDERS PATIENT PRVIOUS APPOINTMENTS
+	"""
 	queryset = request.user.user_category.patient.patient_prescription.all()
 	return render(request, "patient_medical.html", {"appointments": queryset})
 
 @login_required
 @is_valid_patientOrhr
 def generatePDF(request, id, *args, **kwargs):
-    data = Appointment.objects.get(id=id)
-    pdf = render_to_pdf('invoice.html', {"data":data})
-    return HttpResponse(pdf, content_type='application/pdf')
+	"""
+	GENERATE INVOICE PDF
+	"""
+	data = Appointment.objects.get(id=id)
+	pdf = render_to_pdf('invoice.html', {"data":data})
+	return HttpResponse(pdf, content_type='application/pdf')
 
 
 
@@ -212,6 +251,9 @@ def generatePDF(request, id, *args, **kwargs):
 @login_required
 @is_valid_doctor
 def doctor_appointment(request):
+	"""
+	RENDERS DOCTOR APPOINTMENT PAGE
+	"""
 	queryset = request.user.user_category.doctor.doctor_appointment.all()
 	return render(request, "doctor_appointment.html", {"appointments": queryset})
 
@@ -220,6 +262,9 @@ def doctor_appointment(request):
 @login_required
 @is_valid_doctor
 def doctor_profile(request):
+	"""
+	RENDERS DOCTOR PROFILE PAGE TO BE UPDATED
+	"""
 	user_form = UserProfileForm(request.POST or None, instance=request.user)
 	doctor_form = DoctorForm(request.POST or None, instance=request.user.user_category.doctor)
 	if doctor_form.is_valid() and user_form.is_valid():
@@ -238,12 +283,18 @@ def doctor_profile(request):
 @login_required
 @is_valid_doctor
 def doctor_prescriptions(request):
+	"""
+	RENDERS PRESCRIPTIONS GIVEN BY THE DOCTOR
+	"""
 	queryset = request.user.user_category.doctor.doctor_prescription.all()
 	return render(request, "doctor_prescriptions.html", {"prescriptions":queryset})
 
 
 @login_required
 def doctor_prescription(request, id):
+	"""
+	RENDERS PRESCRIPTIONS GIVEN BY THE DOCTOR DETAILS
+	"""
 	if request.user.user_category.is_doctor:
 		problem = Prescription.objects.filter(appoint=Appointment.objects.filter(id=id).first()).first().problem
 		symptom = Prescription.objects.filter(appoint=Appointment.objects.filter(id=id).first()).first().symptom
@@ -266,6 +317,9 @@ def doctor_prescription(request, id):
 @login_required
 @is_valid_receptionist
 def receptionist_dashboard(request):
+	"""
+	RENDERS RECEPTIONIST DASHBOARD PAGE
+	"""
 	queryset = Appointment.objects.all().order_by("-time")[0:5]
 	a = Appointment.objects.all().count
 	b = len(Appointment.objects.all().filter(status="c"))
@@ -311,6 +365,9 @@ def confirm_deletes(request, id):
 
 @login_required
 def patient_profiles(request, id, *args, **kwargs):
+	"""
+	RENDERS PATIENT PROFILE NEEDS TO BE UPDATED
+	"""
 	if request.user.user_category.is_receptionist:
 		user_form = UserProfileForm1(request.POST or None, instance=Patient.objects.get(id=id).patient.user_category)
 		patient_form = PatientForm(request.POST or None, instance=Patient.objects.get(id=id))
@@ -329,6 +386,9 @@ def patient_profiles(request, id, *args, **kwargs):
 @login_required
 @is_valid_hr
 def hr_dashboard(request):
+	"""
+	RENDERS HR DASHBOARD
+	"""
 	queryset = 	Doctor.objects.all()
 	a = Appointment.objects.all().count
 	b = len(Doctor.objects.all().filter(is_working=True))
@@ -346,6 +406,9 @@ def hr_dashboard(request):
 
 @login_required
 def confirm_deletes_hr(request, id):
+	"""
+	RENDERS CONFORM DELETE HR PAGE
+	"""
 	if request.user.user_category.is_hr:
 		data = User.objects.get(id=id)
 		if request.POST.get("ok" or None):
@@ -359,6 +422,9 @@ def confirm_deletes_hr(request, id):
 
 @login_required
 def doctor_profile_hr(request, id, *args, **kwargs):
+	"""
+	RENDERS DOCTOR PROFILE THAT CAN BE UPDATED BY HR ONLY
+	"""
 	if request.user.user_category.is_hr:
 		user_form = UserProfileForm1(request.POST or None, instance=User.objects.get(id=id))
 		doctor_form = DoctorForm1(request.POST or None, instance=User.objects.get(id=id).user_category.doctor)
@@ -376,6 +442,8 @@ def doctor_profile_hr(request, id, *args, **kwargs):
 @login_required
 @is_valid_hr
 def accounting(request):
+	"""
+	RENDERS ACCOUNTING PAGE HANDELED BY HR
+	"""
 	queryset = Appointment.objects.all()
-
 	return render(request, "accounting.html", {"appointments": queryset})
