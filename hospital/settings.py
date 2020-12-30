@@ -25,7 +25,7 @@ SECRET_KEY = '9tvlqg!lw4_r5gnys0_@^w#2r^o#97#6rmkp(j4fu*ofixoh-y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["rocky-chamber-29739.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["rocky-chamber-29739.herokuapp.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -78,16 +78,24 @@ WSGI_APPLICATION = 'hospital.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'putdgisv',
-        'USER': 'putdgisv',
-        'PASSWORD': 'V_SrqNuZUfFuffVJrYxVcC1qCDlztTH6',
-        'HOST': 'suleiman.db.elephantsql.com',
-        'PORT': '5432',
+if not DEBUG:
+    DATABASES = {
+         'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'putdgisv',
+            'USER': 'putdgisv',
+            'PASSWORD': 'V_SrqNuZUfFuffVJrYxVcC1qCDlztTH6',
+            'HOST': 'suleiman.db.elephantsql.com',
+            'PORT': '5432',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'mydatabase',
+        }
+    }
 
 
 # Password validation
