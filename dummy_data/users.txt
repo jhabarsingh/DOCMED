@@ -1,0 +1,39 @@
+patients = [
+    {
+        "username": "",
+        "password": "",
+        "details": {
+            "phone" : "",
+            "gender": "",
+            "age": "",
+            "address": "",
+            "blood group", ""
+        }
+    },
+    
+]
+
+
+doctor = [
+    {
+        "username": "",
+        "password": "",
+        "details": {
+            "profile_pic_url": "",
+            "phone" : "",
+            "gender": "",
+            "upi_id": "",
+            "city": "",
+            "district": "",
+            "state": "",
+            "country": "",
+            "address": "",
+            "blood group", "",
+            "experience": "",
+            "age": "",
+            "department": ""
+
+        }
+    },
+
+]
