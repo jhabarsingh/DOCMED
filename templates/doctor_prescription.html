@@ -4,8 +4,16 @@
 {% block content %}
 <style>
 	.jumbotron {
-		background: lightgreen;
-	}
+			background: white;
+			box-shadow: 5px 3px 20px rgba(0, 0, 0, .3);
+			max-width: 700px;	
+			transition: 400ms linear;	
+		}
+
+		.jumbotron:hover {
+			transform: translateY(-4px);	
+			transition: 400ms linear;
+		}
 </style>
 	{% if messages %}
 		{% for message in messages %}

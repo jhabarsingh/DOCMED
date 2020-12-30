@@ -3,8 +3,16 @@
 {% block content %}
 <style>
 	.jumbotron {
-		background: lightgreen;
-	}
+			background: white;
+			box-shadow: 5px 3px 20px rgba(0, 0, 0, .3);
+			max-width: 700px;	
+			transition: 400ms linear;	
+		}
+
+		.jumbotron:hover {
+			transform: translateY(-4px);	
+			transition: 400ms linear;
+		}
 </style>
 	{% if messages %}
 		{% for message in messages %}
@@ -14,7 +22,7 @@
 		{% endfor %}
 	{% endif %}
 	<form class="container w-75 jumbotron mt-4 py-3" id="login" method="POST">
-		<h1 class="text-center  text-muted">Sign In</h1>
+		<h1 class="text-center  h4 text-muted">SIGN IN</h1>
 		{% csrf_token %}
 		<span style="position: relative; top: 15px;left: 5px;font-size: 15px;">Username</span> 
 		<input type="text" name="username" class="form-control mt-4">

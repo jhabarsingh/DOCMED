@@ -4,7 +4,15 @@
 {% block content %}
 	<style>
 		.jumbotron {
-			background: lightgreen;
+			background: white;
+			box-shadow: 5px 3px 20px rgba(0, 0, 0, .3);
+			max-width: 700px;	
+			transition: 400ms linear;	
+		}
+
+		.jumbotron:hover {
+			transform: translateY(-4px);	
+			transition: 400ms linear;
 		}
 	</style>
 	{% if messages %}
@@ -15,7 +23,7 @@
 		{% endfor %}
 	{% endif %}
 	<form class="container w-75 jumbotron mt-4 py-2" id="login" method="POST">
-		<h1 class="text-center text-uppercase text-muted">Update</h1>
+		<h1 class="text-center text-uppercase h4 text-muted">UPDATE</h1>
 		{% csrf_token %}
 		{{ user_form|crispy }}
 		{{ doctor_form|crispy }}

@@ -4,7 +4,15 @@
 {% block content %}
 <style>
 		.jumbotron {
-			background: lightgreen;	
+			background: white;
+			box-shadow: 5px 3px 20px rgba(0, 0, 0, .3);
+			max-width: 700px;	
+			transition: 400ms linear;	
+		}
+
+		.jumbotron:hover {
+		transform: translateY(-4px);	
+		transition: 400ms linear;
 		}
 
 
@@ -18,7 +26,7 @@
 		{% endfor %}
 	{% endif %}
 	<div class="container mx-auto mt-3 py-4 jumbotron">
-			<h1 class="text-center text-muted">Sign Up</h1>
+			<h1 class="text-center text-muted h4 text-uppercase">Sign Up</h1>
 			<form method="POST">
 				{% csrf_token %}
  				{{ form|crispy }}
