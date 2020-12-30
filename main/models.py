@@ -61,6 +61,7 @@ class Contact(models.Model):
 class Doctor(models.Model):
 	doctor = models.OneToOneField(UserCategory, on_delete = models.CASCADE, 
 								  related_name="doctor")
+	url = models.URLField(max_length=200)
 	phone = models.CharField(max_length=12, blank=True, null=True)
 	gender = models.CharField(choices=GENDER, max_length=1, blank=True, null=True)
 	upi_id = models.CharField(max_length=255, default="None")
@@ -90,7 +91,7 @@ class Appointment(models.Model):
 	doctor = models.ForeignKey(Doctor, on_delete = models.CASCADE, null=True, 
 		                       blank=True, related_name="doctor_appointment")
 	status = models.CharField(default="p", max_length=1)
-	payment = models.IntegerField(blank=True, null=True)
+	payment = models.IntegerField(default=500, null=True)
 	
 	def __str__(self):
 		return self.patient.patient.user_category.username
