@@ -300,15 +300,15 @@ def doctor_prescription(request, id):
 		symptom = Prescription.objects.filter(appoint=Appointment.objects.filter(id=id).first()).first().symptom
 		form = PrescriptionForm(request.POST or None, initial={	"doctor":request.user.user_category.doctor, 
 																"patient": Appointment.objects.get(id=id).patient,
-																"appoint":Appointment.objects.get(id=id)
-																,
+																# "appoint":Appointment.objects.get(id=id),
 																"problem":problem,
-																"symptom":symptom
+																"symptom":symptom,
 																}
 								)
 		if form.is_valid():
 			# form.save()
-			app = Appointment.objects.filter(id=id).update(status="c")
+			Appointment.objects.filter(id=id).update(status="c")
+			app = Appointment.objects.all().filter(id=id).first()
 			pres = form.cleaned_data.get("prescription")
 			Prescription.objects.filter(appoint=app).update(prescription=pres)
 			messages.success(request, "Prescription Saved")

@@ -3,12 +3,22 @@
 {% block content %}
 <style>
 	.jumbotron {
-		background: lightgreen!important;
-	}
+			background: white;
+			box-shadow: 5px 3px 20px rgba(0, 0, 0, .3);
+			max-width: 700px;	
+			transition: 400ms linear;	
+			padding: 5px auto;
+		}
+
+		.jumbotron:hover {
+		transform: translateY(-4px);	
+		transition: 400ms linear;
+		}
+
 </style>
 	<div class="row mt-4 mx-auto w-75">
 		{% for i in appointments %}
-			<div class="col col-12 container jumbotron my-4 special-effect">
+			<div class="col col-12 container jumbotron my-1 special-effect">
 				<div class="d-flex justify-content-center">
 					<div class="mr-4 btn btn-outline-primary">{{ i.appoint.date }}</div>
 					<div class="btn btn-outline-primary">{{ i.appoint.time }}</div>
