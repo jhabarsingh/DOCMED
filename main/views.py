@@ -123,7 +123,7 @@ def doctor_list(request):
 		if(search and search.lower() != "none"):
 			contact_list = Doctor.objects.filter(Q(city__icontains=search) | 
 													Q(district__icontains=search) | Q(state__icontains=search))
-		paginator = Paginator(contact_list, 10)
+		paginator = Paginator(contact_list, 5)
 		page_number = request.GET.get('page')
 		page_obj = paginator.get_page(page_number)
 		return render(request, "doctor_list.html", context={"page_obj": page_obj, "search": search})
@@ -307,8 +307,10 @@ def doctor_prescription(request, id):
 																}
 								)
 		if form.is_valid():
-			form.save()
-			Appointment.objects.filter(id=id).update(status="c")
+			# form.save()
+			app = Appointment.objects.filter(id=id).update(status="c")
+			pres = form.cleaned_data.get("prescription")
+			Prescription.objects.filter(appoint=app).update(prescription=pres)
 			messages.success(request, "Prescription Saved")
 			return HttpResponseRedirect(reverse("main:doctor_appointment"))
 	return render(request, "doctor_prescription.html", {"form":form})

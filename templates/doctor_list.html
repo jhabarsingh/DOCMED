@@ -16,8 +16,8 @@
 	    {# Each "contact" is a Contact model object. #}
 	    <div style="width:500px;margin:auto;box-shadow: 3px -2px 4px rgba(0, 0, 0, .2);display: flex;justify-content: space-between;"
 	    class="py-3 my-3 card">
-	    	<div class="" style="border-radius: 50%; width:70px;height:70px;background: white;margin: auto;box-shadow: 3px -2px 4px rgba(0, 0, 0, .2);">
-	    		<img src="https://robohash.org/{{contact}}" alt="" width="60px">
+	    	<div class="" style="border-radius: 50%; width:70px;height:70px;background: white;margin: auto;box-shadow: 3px -2px 4px rgba(0, 0, 0, .2);overflow: hidden">
+	    		<img src="{{contact.url}}" alt="" width="60px">
 	    	</div>
 	    	<div class="px-4" width="470px">
 	    		<div style="display: flex;justify-content: space-between;" >

@@ -4,8 +4,16 @@
 {% block content %}
 <style>
 	.jumbotron {
-		background: lightgreen;
-	}
+			background: white;
+			box-shadow: 5px 3px 20px rgba(0, 0, 0, .3);
+			max-width: 700px;	
+			transition: 400ms linear;	
+		}
+
+		.jumbotron:hover {
+			transform: translateY(-4px);	
+			transition: 400ms linear;
+		}
 </style>
 	{% if messages %}
 		{% for message in messages %}
@@ -26,6 +34,6 @@
 		    <label for="exampleFormControlTextarea1" class="h5">Symtoms</label>
 		    <textarea name="symtoms" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 		  </div>
-		<input type="submit" name="" class=" ml-0 btn btn-outline-primary mt-4">
+		<input type="submit" name="" value="submit" class=" ml-0 btn btn-outline-primary mt-4">
 	</form>
 {% endblock %}
