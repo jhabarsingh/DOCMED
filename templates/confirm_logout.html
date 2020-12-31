@@ -3,8 +3,16 @@
 {% block content %}
 	<style>
 		.jumbotron {
-			background: lightgreen;
-		}	
+			background: white;
+			box-shadow: 5px 3px 20px rgba(0, 0, 0, .3);
+			max-width: 700px;	
+			transition: 400ms linear;	
+		}
+
+		.jumbotron:hover {
+		transform: translateY(-4px);	
+		transition: 400ms linear;
+		}
 	</style>
 	<form class="container w-75 jumbotron  mt-4 py-4 text-center" id="login" method="POST">
 		<h3 class="text-center text-uppercase text-muted">Are You Sure You Want To Logout ?</h3>

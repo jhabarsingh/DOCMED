@@ -1,4 +1,4 @@
-#!/home/lab1/Desktop/jhabar/Covid-Assistant/env/bin/python
+#!/home/jabby/projects/Covid-Assistant/env/bin/python3
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
