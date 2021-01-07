@@ -29,6 +29,7 @@ recommendations over the user’s medical data.
 > These are the designs of our website
 > 1. CHATBOT
 > 2. ML MODEL TO DETECT COVID FROM SYMTOMS
+> 3. ML MODEL TO DETECT COVID FROM CHEST XRAY REPORT
 
 ![HOME PAGE](
 https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
