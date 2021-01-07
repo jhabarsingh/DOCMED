@@ -26,10 +26,9 @@ recommendations over the user’s medical data.
 [Read More](https://drive.google.com/file/d/1v68onjm_Js7azFJCdbTQFiGFLwo6Ry-_/view?usp=sharing)
 
 ## DESIGN
-![HOME PAGE](
-https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/home_page.gif)
-
----
+> These are the designs of our website
+> 1. CHATBOT
+> 2. ML MODEL TO DETECT COVID FROM SYMTOMS
 
 ![HOME PAGE](
 https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
