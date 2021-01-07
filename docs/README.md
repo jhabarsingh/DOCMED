@@ -1,4 +1,4 @@
-# Covid Assistant
+# AUTONOMOUS MEDICAL DIGNOSYS SYSTEM
 ---
 <div style="display:flex;justify-content:space-around">
   <img titlt="Dialog Flow" src="https://pbs.twimg.com/profile_images/880147119528476672/S7C-2C6t.jpg" width="70px" height="70px"  style="margin-right:5px;"/>
@@ -16,10 +16,16 @@
 
 ---
 
-# ABSTRACT 
-[ABSTRACT LINK](https://drive.google.com/file/d/1v68onjm_Js7azFJCdbTQFiGFLwo6Ry-_/view?usp=sharing)
+## ABSTRACT 
+To improve the conventional diagnostic procedures as they are prone to human
+mistakes and these are slow, expensive and not equally accessible to everyone therefore 
+we developed an efficient ML model for predicting the possibility of various
+diseases like covid, viral fever, dengue etc and integrate it with an interactive web
+based dashboard which will also provide some additional insights and
+recommendations over the user’s medical data.
+[Read More](https://drive.google.com/file/d/1v68onjm_Js7azFJCdbTQFiGFLwo6Ry-_/view?usp=sharing)
 
-# DESIGN
+## DESIGN
 ![HOME PAGE](
 https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/home_page.gif)
 
