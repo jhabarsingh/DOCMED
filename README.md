@@ -1,4 +1,4 @@
-# AUTONOMOUS MEDICAL DIGNOSYS SYSTEM
+# DOCMED
 ---
 <div style="display:flex;justify-content:space-around">
   <img titlt="Dialog Flow" src="https://pbs.twimg.com/profile_images/880147119528476672/S7C-2C6t.jpg" width="70px" height="70px"  style="margin-right:5px;"/>
