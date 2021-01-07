@@ -1,4 +1,4 @@
-# DOCMED
+# AUTONOMOUS MEDICAL DIGNOSYS SYSTEM
 ---
 <div style="display:flex;justify-content:space-around">
   <img titlt="Dialog Flow" src="https://pbs.twimg.com/profile_images/880147119528476672/S7C-2C6t.jpg" width="70px" height="70px"  style="margin-right:5px;"/>
@@ -14,11 +14,25 @@
 
 ---
 
-<!--
-#### Video Link
-[Video](https://drive.google.com/file/d/1EBM0fIkShnjhjss7qcY2Xc84tgdfsL84/view?usp=drivesdk)
+---
 
-#### Website Link
-[Website](https://rocky-chamber-29739.herokuapp.com/)
--->
+## ABSTRACT 
+To improve the conventional diagnostic procedures as they are prone to human
+mistakes and these are slow, expensive and not equally accessible to everyone therefore 
+we developed an efficient ML model for predicting the possibility of various
+diseases like covid, viral fever, dengue etc and integrate it with an interactive web
+based dashboard which will also provide some additional insights and
+recommendations over the user’s medical data.
+[Read More](https://drive.google.com/file/d/1v68onjm_Js7azFJCdbTQFiGFLwo6Ry-_/view?usp=sharing)
 
+## DESIGN
+> These are the designs of our website
+> 1. CHATBOT
+> 2. ML MODEL TO DETECT COVID FROM SYMTOMS
+
+![HOME PAGE](
+https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
+
+---
+![HOME PAGE](
+https://github.com/jhabarsingh/DOCMED/blob/main/docs/ani/ml.gif)
