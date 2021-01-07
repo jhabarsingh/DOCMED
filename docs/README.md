@@ -14,11 +14,20 @@
 
 ---
 
-<!--
-#### Video Link
-[Video](https://drive.google.com/file/d/1EBM0fIkShnjhjss7qcY2Xc84tgdfsL84/view?usp=drivesdk)
+---
 
-#### Website Link
-[Website](https://rocky-chamber-29739.herokuapp.com/)
--->
+# ABSTRACT 
+[ABSTRACT LINK](https://drive.google.com/file/d/1v68onjm_Js7azFJCdbTQFiGFLwo6Ry-_/view?usp=sharing)
 
+# DESIGN
+![HOME PAGE](
+https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/home_page.gif)
+
+---
+
+![HOME PAGE](
+https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
+
+---
+![HOME PAGE](
+https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/machine_learning.gif)
