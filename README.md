@@ -1,6 +1,8 @@
 # DOCMED
 ---
-<div style="display:flex;justify-content:space-around">
+<details>
+  <h2 style="display:inline; margin:auto;">TECH STACK</h2>
+  <div style="display:flex;justify-content:space-around">
   <img titlt="Dialog Flow" src="https://pbs.twimg.com/profile_images/880147119528476672/S7C-2C6t.jpg" width="70px" height="70px"  style="margin-right:5px;"/>
   <img  title="Django" src="https://icon-library.com/images/django-icon/django-icon-0.jpg" width="70px" height="70px" style="margin-right:5px;" />
   <img  title="Kommunicate" src="https://ps.w.org/kommunicate-live-chat/assets/icon-256x256.png?rev=2291443" height="70px"  style="margin-right:5px;"/>
@@ -11,10 +13,11 @@
   <img  title="Vue JS" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/800px-Vue.js_Logo_2.svg.png" height="70px" style="margin-right:5px;" />
   <img  title="Vue JS" src="https://pbs.twimg.com/profile_images/1273307847103635465/lfVWBmiW_400x400.png" height="70px" style="margin-right:5px;" />
 </div>
+</details>
+
 
 ---
 
----
 
 ## ABSTRACT 
 To improve the conventional diagnostic procedures as they are prone to human
