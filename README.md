@@ -1,7 +1,7 @@
 # DOCMED
----
+
 <details>
-  <h2 style="display:inline; margin:auto;">TECH STACK</h2>
+  <summary>:zap: TECH STACK</summary>
   <div style="display:flex;justify-content:space-around">
   <img titlt="Dialog Flow" src="https://pbs.twimg.com/profile_images/880147119528476672/S7C-2C6t.jpg" width="70px" height="70px"  style="margin-right:5px;"/>
   <img  title="Django" src="https://icon-library.com/images/django-icon/django-icon-0.jpg" width="70px" height="70px" style="margin-right:5px;" />
@@ -16,7 +16,6 @@
 </details>
 
 
----
 
 
 ## ABSTRACT 
