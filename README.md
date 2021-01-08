@@ -2,6 +2,7 @@
 
 <details>
   <summary>:zap: TECH STACK</summary>
+  <br/>
   <div style="display:flex;justify-content:space-around">
   <img titlt="Dialog Flow" src="https://pbs.twimg.com/profile_images/880147119528476672/S7C-2C6t.jpg" width="50px" height="50px"  style="margin-right:5px;"/>
   <img  title="Django" src="https://icon-library.com/images/django-icon/django-icon-0.jpg" width="50px" height="50px" style="margin-right:5px;" />
