@@ -40,3 +40,9 @@ https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
 ---
 ![HOME PAGE](
 https://github.com/jhabarsingh/DOCMED/blob/main/docs/ani/ml.gif)
+
+<!--
+## Machine Learning Model
+1. #### COVID PREDICTION BASED ON SYMPTOMS
+ > ALGORITHM USED : 
+-->
