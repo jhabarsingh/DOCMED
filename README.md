@@ -28,6 +28,7 @@ recommendations over the user’s medical data.
 [Read More](https://drive.google.com/file/d/1v68onjm_Js7azFJCdbTQFiGFLwo6Ry-_/view?usp=sharing)
 
 ## DESIGN
+
 > These are the designs of our website
 > 1. CHATBOT
 > 2. ML MODEL TO PREDICT COVID FROM SYMTOMS
@@ -36,12 +37,17 @@ recommendations over the user’s medical data.
 ![HOME PAGE](
 https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
 
----
+### ML Model
 ![HOME PAGE](
 https://github.com/jhabarsingh/DOCMED/blob/main/docs/ani/ml.gif)
 
-<!--
-## Machine Learning Model
-1. #### COVID PREDICTION BASED ON SYMPTOMS
- > ALGORITHM USED : 
--->
+---
+
+### You can contribute to this project in many ways
+ 1. You can create an issue if you find any bug.
+ 2. You can work on an existing issue and Send PR.
+ 3. You can make changes in the design if it is needed.
+ 4. Even if you find any grammatical or spelling mistake then also you can create an issue.
+
+> *I would be glad to see a notification saying `User {xyz} created a Pull Request`.
+I promise to review it.*
