@@ -11,6 +11,7 @@
 
   <img  title="Postgresql" src="https://pbs.twimg.com/media/EGc7jg4XoAA0bez.png" height="50px" style="margin-right:5px;" />
   <img  title="Scikit Learn" src="https://www.analyticsvidhya.com/wp-content/uploads/2015/01/scikit-learn-logo.png" height="50px" style="margin-right:5px;" />
+  <img  title="Vue JS" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/800px-Vue.js_Logo_2.svg.png" height="50px" style="margin-right:5px;" />
   <img  title="Docker" src="https://pbs.twimg.com/profile_images/1273307847103635465/lfVWBmiW_400x400.png" height="50px" style="margin-right:5px;" />
 </div>
 </details>
