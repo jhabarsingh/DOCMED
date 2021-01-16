@@ -122,7 +122,9 @@ def doctor_list(request):
 			return redirect("main:message", doctor=doctor_babu)
 		if(search and search.lower() != "none"):
 			contact_list = Doctor.objects.filter(Q(city__icontains=search) | 
-													Q(district__icontains=search) | Q(state__icontains=search))
+											Q(district__icontains=search) | 
+											Q(state__icontains=search)
+							)
 		paginator = Paginator(contact_list, 5)
 		page_number = request.GET.get('page')
 		page_obj = paginator.get_page(page_number)
@@ -298,13 +300,11 @@ def doctor_prescription(request, id):
 	if request.user.user_category.is_doctor:
 		problem = Prescription.objects.filter(appoint=Appointment.objects.filter(id=id).first()).first().problem
 		symptom = Prescription.objects.filter(appoint=Appointment.objects.filter(id=id).first()).first().symptom
-		form = PrescriptionForm(request.POST or None, initial={	"doctor":request.user.user_category.doctor, 
-																"patient": Appointment.objects.get(id=id).patient,
-																# "appoint":Appointment.objects.get(id=id),
-																"problem":problem,
-																"symptom":symptom,
-																}
-								)
+		form = PrescriptionForm(request.POST or None, initial={	
+			"doctor":request.user.user_category.doctor, 
+			"patient": Appointment.objects.get(id=id).patient,
+			"problem":problem, "symptom":symptom,
+		})
 		if form.is_valid():
 			# form.save()
 			Appointment.objects.filter(id=id).update(status="c")
