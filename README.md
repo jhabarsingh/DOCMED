@@ -42,7 +42,7 @@ https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
 ![HOME PAGE](
 https://github.com/jhabarsingh/DOCMED/blob/main/docs/ani/ml.gif)
 
-## Project setup
+## Project Setup
 
 ```bash
 git clone https://github.com/jhabarsingh/DOCMED.git  
