@@ -42,14 +42,24 @@ https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
 ![HOME PAGE](
 https://github.com/jhabarsingh/DOCMED/blob/main/docs/ani/ml.gif)
 
+## Project setup
 
+```bash
+git clone https://github.com/jhabarsingh/DOCMED.git  
+cd DOCMED
+python3 -m venv env
+source env/bin/activate
+python3 -m pip install --upgrade pip
+pip install -r requirements.txt
+python manage.py runserver
+```
 
 ## Want To Contribute
 ### You can contribute to this project in many ways
  1. You can create an issue if you find any bug.
  2. You can work on an existing issue and Send PR.
  3. You can make changes in the design if it is needed.
- 4. Even if you find any grammatical or spelling mistake then also you can create an issue.
+ 4. Even if you find any grammatical or spelling mistakes then also you can create an issue.
 
 > *I would be glad to see a notification saying `User {xyz} created a Pull Request`.
 I promise to review it.*
