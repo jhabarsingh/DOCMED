@@ -30,11 +30,12 @@ recommendations over the user’s medical data.
 
 ## DESIGN
 
-> These are the designs of our website
-> 1. CHATBOT
-> 2. ML MODEL TO PREDICT COVID FROM SYMTOMS
-> 3. ML MODEL TO PREDICT COVID FROM CHEST XRAY REPORT
+These are the designs of our website
+  1. CHATBOT
+  2. ML MODEL TO PREDICT COVID FROM SYMTOMS
+  3. ML MODEL TO PREDICT COVID FROM CHEST XRAY REPORT
 
+### Home Page
 ![HOME PAGE](
 https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
 
