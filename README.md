@@ -26,7 +26,7 @@ we developed an efficient ML model for predicting the possibility of various
 diseases like covid, viral fever, dengue etc and integrate it with an interactive web
 based dashboard which will also provide some additional insights and
 recommendations over the user’s medical data.
-[Read More](https://drive.google.com/file/d/1v68onjm_Js7azFJCdbTQFiGFLwo6Ry-_/view?usp=sharing)
+[Read More](https://docs.google.com/document/d/1q19CVPYDygCHwYQ6YYb1oWLqrlC6ymcc14U_EjeX64w/edit?usp=sharing)
 
 ## DESIGN
 
