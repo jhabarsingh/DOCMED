@@ -55,7 +55,7 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
-## Want To Contribute
+## [Want To Contribute](https://github.com/jhabarsingh/DSALGO-VISUALIZER)
 ### You can contribute to this project in many ways
  1. You can create an issue if you find any bug.
  2. You can work on an existing issue and Send PR.
