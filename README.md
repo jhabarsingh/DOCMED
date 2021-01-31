@@ -34,6 +34,7 @@ These are the designs of our website
   1. CHATBOT
   2. ML MODEL TO PREDICT COVID FROM SYMTOMS
   3. ML MODEL TO PREDICT COVID FROM CHEST XRAY REPORT
+  4. Interact with Doctors in your city
 
 ### Home Page
 ![HOME PAGE](
