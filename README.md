@@ -33,7 +33,7 @@ recommendations over the user’s medical data.
 These are the designs of our website
   1. CHATBOT
   2. ML MODEL TO PREDICT COVID FROM SYMTOMS
-  3. ML MODEL TO PREDICT COVID FROM CHEST XRAY REPORT
+  3. [ML MODEL TO PREDICT COVID FROM CHEST XRAY REPORT](https://github.com/jhabarsingh/XRAY-COVID-PREDICTION)
   4. INTERACT WITH DOCTORS IN YOUR CITY
 
 ### Home Page
