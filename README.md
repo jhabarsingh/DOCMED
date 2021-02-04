@@ -1,5 +1,6 @@
-# DOCMED
-
+<p align="center">
+  <img src="https://github.com/jhabarsingh/DOCMED/blob/main/docs/ani/docmed.png?raw=true" />
+</p>
 <details>
   <summary>:zap: TECH STACK</summary>
   <br/>
