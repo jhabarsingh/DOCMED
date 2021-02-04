@@ -36,7 +36,7 @@ These are the designs of our website
   2. ML MODEL TO PREDICT COVID FROM SYMTOMS
   3. ML MODEL TO PREDICT COVID FROM [CHEST XRAY REPORT](https://github.com/jhabarsingh/XRAY-COVID-PREDICTION)
   4. INTERACT WITH DOCTORS IN YOUR CITY
-  5. [TRACK COVID CASES](https://github.com/jhabarsingh/DOCMED/COTRACK) WORLD WIDE OR COUNTRY WISE
+  5. [TRACK COVID CASES](https://github.com/jhabarsingh/COTRACK) WORLD WIDE OR COUNTRY WISE
 
 ### Home Page
 ![HOME PAGE](
