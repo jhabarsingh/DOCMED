@@ -31,7 +31,7 @@ recommendations over the user’s medical data.
 
 ## DESIGN
 
-Features Provided By Docmed
+Features Provided By **DOCMED**a
   1. CHATBOT **COVAT** TO RESOLVE YOUR QUERIES
   2. ML MODEL TO PREDICT COVID FROM **SYMTOMS**
   3. ML MODEL TO PREDICT COVID FROM [**CHEST XRAY REPORT**](https://github.com/jhabarsingh/XRAY-COVID-PREDICTION)
