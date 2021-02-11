@@ -1,5 +1,6 @@
-# DOCMED
-
+<p align="center">
+  <img src="https://github.com/jhabarsingh/DOCMED/blob/main/docs/ani/docmed.png?raw=true" />
+</p>
 <details>
   <summary>:zap: TECH STACK</summary>
   <br/>
@@ -26,15 +27,18 @@ we developed an efficient ML model for predicting the possibility of various
 diseases like covid, viral fever, dengue etc and integrate it with an interactive web
 based dashboard which will also provide some additional insights and
 recommendations over the user’s medical data.
-[Read More](https://drive.google.com/file/d/1v68onjm_Js7azFJCdbTQFiGFLwo6Ry-_/view?usp=sharing)
+[Read More](https://docs.google.com/document/d/1q19CVPYDygCHwYQ6YYb1oWLqrlC6ymcc14U_EjeX64w/edit?usp=sharing)
 
 ## DESIGN
 
-> These are the designs of our website
-> 1. CHATBOT
-> 2. ML MODEL TO PREDICT COVID FROM SYMTOMS
-> 3. ML MODEL TO PREDICT COVID FROM CHEST XRAY REPORT
+Features Provided By **DOCMED**
+  1. CHATBOT **COVAT** TO RESOLVE YOUR QUERIES
+  2. ML MODEL TO PREDICT COVID FROM **SYMTOMS**
+  3. ML MODEL TO PREDICT COVID FROM [**CHEST XRAY REPORT**](https://github.com/jhabarsingh/XRAY-COVID-PREDICTION)
+  4. INTERACT WITH **DOCTORS** IN YOUR CITY
+  5. [**TRACK COVID CASES**](https://github.com/jhabarsingh/COTRACK) WORLD WIDE OR COUNTRY WISE
 
+### Home Page
 ![HOME PAGE](
 https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
 
@@ -42,14 +46,24 @@ https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
 ![HOME PAGE](
 https://github.com/jhabarsingh/DOCMED/blob/main/docs/ani/ml.gif)
 
+## Project Setup
 
+```bash
+git clone https://github.com/jhabarsingh/DOCMED.git  
+cd DOCMED
+python3 -m venv env
+source env/bin/activate
+python3 -m pip install --upgrade pip
+pip install -r requirements.txt
+python manage.py runserver
+```
 
-## Want To Contribute
+## [Want To Contribute](https://medium.com/mindsdb/contributing-to-an-open-source-project-how-to-get-started-6ba812301738)
 ### You can contribute to this project in many ways
  1. You can create an issue if you find any bug.
  2. You can work on an existing issue and Send PR.
  3. You can make changes in the design if it is needed.
- 4. Even if you find any grammatical or spelling mistake then also you can create an issue.
+ 4. Even if you find any grammatical or spelling mistakes then also you can create an issue.
 
 > *I would be glad to see a notification saying `User {xyz} created a Pull Request`.
 I promise to review it.*
