@@ -1,7 +1,4 @@
 ct scan
-eating model
-dashboard
+dashboard --> frontend
 oauth
 chatbot
-xray api connection
-
