@@ -1,4 +1,0 @@
-ct scan
-dashboard --> frontend
-oauth
-chatbot
