@@ -3,4 +3,4 @@
 2. Frontend
 3. OAuth
 4. Chatbot
-5. Xray Classifier 
+5. [Xray Classifier ](https://medium.com/pytorch/image-similarity-search-in-pytorch-1a744cf3469)
