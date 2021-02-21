@@ -1,3 +1,5 @@
+# DOCMED  ⚡️ [![GitHub](https://img.shields.io/github/license/jhabarsingh/DOCMED?color=blue)](https://github.com/jhabarsingh/DOCMED/blob/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/jhabarsingh/DOCMED)](https://github.com/jhabarsingh/DDOCMED/stargazers)  [![GitHub contributors](https://img.shields.io/github/contributors/jhabarsingh/DOCMED.svg)](https://github.com/jhabarsingh/DOCMED/graphs/contributors)  [![GitHub issues](https://img.shields.io/github/issues/jhabarsingh/DOCMED.svg)](https://github.com/jhabarsingh/DOCMED/issues)
+
 <p align="center">
   <img src="https://github.com/jhabarsingh/DOCMED/blob/main/docs/ani/docmed.png?raw=true" />
 </p>
