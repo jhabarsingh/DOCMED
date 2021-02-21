@@ -9,7 +9,7 @@
 I promise to review it.*
 
 
-## Project Setup
+## [Project Setup](https://github.com/jhabarsingh/DOCMED)
 
 ```bash
 git clone https://github.com/jhabarsingh/DOCMED.git  
