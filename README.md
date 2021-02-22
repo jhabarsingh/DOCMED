@@ -11,7 +11,7 @@
   <img  title="Django" src="https://icon-library.com/images/django-icon/django-icon-0.jpg" width="50px" height="50px" style="margin-right:5px;" />
   <img  title="Kommunicate" src="https://ps.w.org/kommunicate-live-chat/assets/icon-256x256.png?rev=2291443" height="50px"  style="margin-right:5px;"/>
   <img title="Heroku"  src="https://www.thedevcoach.co.uk/wp-content/uploads/2020/04/heroku.png" height="50px"  style="margin-right:5px;"/> 
-
+  <img  title="Pytorch" src="https://pytorch.org/assets/images/pytorch-logo.png" height="50px" style="margin-right:5px;" />
   <img  title="Postgresql" src="https://pbs.twimg.com/media/EGc7jg4XoAA0bez.png" height="50px" style="margin-right:5px;" />
   <img  title="Scikit Learn" src="https://www.analyticsvidhya.com/wp-content/uploads/2015/01/scikit-learn-logo.png" height="50px" style="margin-right:5px;" />
   <img  title="Vue JS" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/800px-Vue.js_Logo_2.svg.png" height="50px" style="margin-right:5px;" />
