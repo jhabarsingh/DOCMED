@@ -4,8 +4,9 @@
 6. [XRAY CLASSIFIER ](https://medium.com/pytorch/image-similarity-search-in-pytorch-1a744cf3469)
 3. Frontend
 -->
+1. CT SCAN SCRIPT
+2. KOMMUNICATE CHATBOT
 4. OAuth
-5. Chatbot
 
 
 ### Users in the database (For Testing)
