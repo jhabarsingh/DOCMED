@@ -5,3 +5,10 @@
 4. OAuth
 5. Chatbot
 6. [XRAY CLASSIFIER ](https://medium.com/pytorch/image-similarity-search-in-pytorch-1a744cf3469)
+
+
+### Users in the database (For Testing)
+1. PATIENT
+      * `mayanksharma`
+2. DOCTOR
+      * `gurumaan`
