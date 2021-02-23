@@ -72,25 +72,25 @@ df['Condition'] = le.fit_transform(df['Condition'])
 df
 
 ''' VISUALIZATION
-    from pylab import rcParams
-    rcParams['figure.figsize'] = 13, 18
-    corrmat = df.corr()
-    k = 22
-    cols = corrmat.nlargest(k, 'Condition')['Condition'].index
-    cm = np.corrcoef(df[cols].values.T)
-    sns.set(font_scale=1.25)
-    hm = sns.heatmap(cm, cbar=True, annot=True, square=True, fmt='.2f', annot_kws={'size': 10}, yticklabels=cols.values, xticklabels=cols.values)
-    plt.show()
+from pylab import rcParams
+rcParams['figure.figsize'] = 13, 18
+corrmat = df.corr()
+k = 22
+cols = corrmat.nlargest(k, 'Condition')['Condition'].index
+cm = np.corrcoef(df[cols].values.T)
+sns.set(font_scale=1.25)
+hm = sns.heatmap(cm, cbar=True, annot=True, square=True, fmt='.2f', annot_kws={'size': 10}, yticklabels=cols.values, xticklabels=cols.values)
+plt.show()
 '''
 
-X= df.drop(['Condition'],axis=1)
-y= df['Condition']
+X = df.drop(['Condition'],axis=1)
+y = df['Condition']
 
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
 
 from sklearn.ensemble import RandomForestClassifier
-rfc1=RandomForestClassifier(criterion= 'gini', max_depth= 4, max_features= 'sqrt', n_estimators= 100)
+rfc1 = RandomForestClassifier(criterion= 'gini', max_depth= 4, max_features= 'sqrt', n_estimators= 100)
 rfc1.fit(X_train, y_train)
 pred = rfc1.predict(X_test)
 
