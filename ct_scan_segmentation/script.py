@@ -1,20 +1,14 @@
-# %% [code]
-# This Python 3 environment comes with many helpful analytics libraries installed
-# It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python
-# For example, here's several helpful packages to load
-
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import nibabel as nib
 import matplotlib.pyplot as plt
 import cv2
 import tensorflow as tf
+import pickle
 
-# %% [code]
+
 data = pd.read_csv('input/covid19-ct-scans/metadata.csv')
 data.head()
-
-# %% [code]
 def read_nii(filepath):
     '''
     Reads .nii file and returns pixel array
@@ -24,14 +18,12 @@ def read_nii(filepath):
     array   = np.rot90(np.array(array))
     return(array)
 
-# %% [code]
 # Read sample
 sample_ct   = read_nii(data.loc[1,'ct_scan'])
 sample_lung = read_nii(data.loc[1,'lung_mask'])
 sample_infe = read_nii(data.loc[1,'infection_mask'])
 sample_all  = read_nii(data.loc[1,'lung_and_infection_mask'])
 
-# %% [code]
 fig = plt.figure(figsize = (18,15))
 plt.subplot(1,4,1)
 plt.imshow(sample_ct[..., 150], cmap = 'bone')
@@ -52,10 +44,8 @@ plt.imshow(sample_ct[..., 150], cmap = 'bone')
 plt.imshow(sample_all[..., 150], alpha = 0.5, cmap = 'nipy_spectral')
 plt.title('Lung and Infection Mask')
 
-# %% [markdown]
-# ## Load Data
 
-# %% [code]
+# ## Load Data
 lungs = []
 infections = []
 img_size = 128
@@ -70,21 +60,16 @@ for i in range(len(data)):
         lungs.append(lung_img[..., np.newaxis])
         infections.append(infec_img[..., np.newaxis])
 
-# %% [code]
 lungs = np.array(lungs)
 infections = np.array(infections)
 
-# %% [code]
 print(lungs.shape)
 
-# %% [code]
 print(infections.shape)
 
-# %% [code]
 from sklearn.model_selection import train_test_split
 lung_train, lung_test, infect_train, infect_test = train_test_split(lungs, infections, test_size = 0.1)
 
-# %% [code]
 from tensorflow.keras.models import *
 from tensorflow.keras.layers import *
 from tensorflow.keras.optimizers import *
@@ -154,22 +139,19 @@ def build_model(input_layer, start_neurons):
 input_layer = Input((img_size, img_size, 1))
 output_layer = build_model(input_layer, 16)
 
-# %% [code]
 output = build_model(input_layer, 16)
 
-# %% [code]
 model = Model(input_layer, output_layer)
 
-# %% [code]
 model.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"])
 
-# %% [code]
 model.summary()
 
-# %% [code]
 history = model.fit(lung_train, infect_train, epochs = 1, validation_data = (lung_test, infect_test))
 
-# %% [code]
+
+model.save('pickle.h5')
+
 plt.plot(history.history['accuracy'])
 plt.plot(history.history['val_accuracy'])
 plt.title('Accuracy vs Epochs')
@@ -178,7 +160,6 @@ plt.ylabel('Accuracy')
 plt.legend(['Train', 'Val'], loc = 'upper left')
 plt.show()
 
-# %% [code]
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
 plt.title('Loss vs Epochs')
@@ -187,13 +168,9 @@ plt.ylabel('Loss')
 plt.legend(['Train', 'Val'], loc = 'upper right')
 plt.show()
 
-# %% [code]
 len(lung_test)
 
-# %% [markdown]
 # predicted masks
-
-# %% [code]
 predicted = model.predict(lung_test)
 fig = plt.figure(figsize = (18,15))
 
