@@ -10,6 +10,8 @@ import tensorflow as tf
 import cv2
 import os
 import numpy as np
+import pickle
+from keras.models import load_model
 
 labels = ['covid', 'noncovid']
 img_size = 224
@@ -63,53 +65,63 @@ y_val = np.array(y_val)
 
 
 
-datagen = ImageDataGenerator(
-        featurewise_center=False,  # set input mean to 0 over the dataset
-        samplewise_center=False,  # set each sample mean to 0
-        featurewise_std_normalization=False,  # divide inputs by std of the dataset
-        samplewise_std_normalization=False,  # divide each input by its std
-        zca_whitening=False,  # apply ZCA whitening
-        rotation_range = 30,  # randomly rotate images in the range (degrees, 0 to 180)
-        zoom_range = 0.2, # Randomly zoom image
-        width_shift_range=0.1,  # randomly shift images horizontally (fraction of total width)
-        height_shift_range=0.1,  # randomly shift images vertically (fraction of total height)
-        horizontal_flip = True,  # randomly flip images
-        vertical_flip=False)  # randomly flip images
-
-
-datagen.fit(x_train)
-
-
 model = Sequential()
 model.add(Conv2D(32,3,padding="same", activation="relu", input_shape=(224,224,3)))
-model.add(MaxPool2D())
+# model.add(MaxPool2D())
 
-model.add(Conv2D(32, 3, padding="same", activation="relu"))
-model.add(MaxPool2D())
+# model.add(Conv2D(32, 3, padding="same", activation="relu"))
+# model.add(MaxPool2D())
 
-model.add(Conv2D(64, 3, padding="same", activation="relu"))
-model.add(MaxPool2D())
+# model.add(Conv2D(64, 3, padding="same", activation="relu"))
+# model.add(MaxPool2D())
 model.add(Dropout(0.4))
 
 model.add(Flatten())
 model.add(Dense(128,activation="relu"))
 model.add(Dense(2, activation="softmax"))
 
-model.summary()
-
 opt = Adam(lr=0.000001)
 model.compile(optimizer = opt , loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True) , metrics = ['accuracy'])
 
 
 
-history = model.fit(x_train,y_train,epochs = 2 , validation_data = (x_val, y_val))
+model.fit(x_train,y_train,epochs = 10 , validation_data = (x_val, y_val))
+
+# print(weakref.getweakref(model))
+
+# binary_file = open('data.obj', 'wb')
+# pickle.dump(model, binary_file)
+# binary_file.close()
+
+model.save('pickle.h5')
+
+def readImage(image):
+    image = cv2.imread(image)
+    resized_arr = cv2.resize(image, (img_size, img_size))
+    data = []
+    data.append([resized_arr, "noncovid"])
+    data = np.array(data)
+    train = []
+    for feature, label in data:
+      train.append(feature)
+    data = np.array(train) / 255
+    return data
+
+imageName = "noncovid.jpg"
+data = readImage(imageName)
+predictions = model.predict_classes(data)
+
+if predictions[0] == 0:
+    print("COVID")
+else:
+    print("NONCOVID")
 
 
-acc = history.history['accuracy']
-val_acc = history.history['val_accuracy']
-loss = history.history['loss']
-val_loss = history.history['val_loss']
+imageName = "covid.png"
+data = readImage(imageName)
+predictions = model.predict_classes(data)
 
-predictions = model.predict_classes(x_val)
-
-
+if predictions[0] == 0:
+    print("COVID")
+else:
+    print("NONCOVID")
