@@ -1,4 +1,4 @@
 env
 input
 __pycache__
-*.h5
+xray_classifier/*.h5
