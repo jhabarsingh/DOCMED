@@ -18,6 +18,7 @@ Lung segmentation is often the first step to increase the performance of any oth
 	pip install -r requirements.txt
 	```
 8. run the `script.py` file
+
 	```
 	python script.py
 	```
