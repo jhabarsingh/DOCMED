@@ -29,11 +29,14 @@ def main(argv):
     print(len(image_array.shape))
 
     # ask if rotate
-    ask_rotate = input('Would you like to rotate the orientation? (y/n) ')
+    # ask_rotate = input('Would you like to rotate the orientation? (y/n) ')
+    ask_rotate = "y"
 
     if ask_rotate.lower() == 'y':
-        ask_rotate_num = int(input('OK. By 90° 180° or 270°? '))
-        if ask_rotate_num == 90 or ask_rotate_num == 180 or ask_rotate_num == 270:
+        #ask_rotate_num = int(input('OK. By 90° 180° or 270°? '))
+        ask_rotate_num = 90
+	
+	if ask_rotate_num == 90 or ask_rotate_num == 180 or ask_rotate_num == 270:
             print('Got it. Your images will be rotated by {} degrees.'.format(ask_rotate_num))
         else:
             print('You must enter a value that is either 90, 180, or 270. Quitting...')
