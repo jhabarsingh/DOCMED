@@ -1,4 +1,6 @@
-## NII TO PNG CONVERTER
+# NII TO PNG CONVERTER
+
+## CODE
 ```
-$ python3 nii2png.py -i <inputfile> -o <outputfolder>
+python3 nii2png.py -i brain.nii -o png/
 ```
