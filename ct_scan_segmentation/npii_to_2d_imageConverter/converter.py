@@ -12,7 +12,7 @@ def read_nii(filepath):
     return(array)
 
 def convert(): 
-  
+    
     array = read_nii("coronacases.nii")[..., 150]
     print(type(array)) 
     print(array) 
