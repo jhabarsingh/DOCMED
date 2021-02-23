@@ -34,6 +34,8 @@ plt.imshow(sample_ct[..., 150], cmap = 'bone')
 plt.imshow(sample_lung[..., 150],alpha = 0.5, cmap = 'nipy_spectral')
 plt.title('Lung Mask')
 
+
+
 plt.subplot(1,4,3)
 plt.imshow(sample_ct[..., 150], cmap = 'bone')
 plt.imshow(sample_infe[..., 150], alpha = 0.5, cmap = 'nipy_spectral')
