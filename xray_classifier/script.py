@@ -67,13 +67,7 @@ y_val = np.array(y_val)
 
 model = Sequential()
 model.add(Conv2D(32,3,padding="same", activation="relu", input_shape=(224,224,3)))
-# model.add(MaxPool2D())
 
-# model.add(Conv2D(32, 3, padding="same", activation="relu"))
-# model.add(MaxPool2D())
-
-# model.add(Conv2D(64, 3, padding="same", activation="relu"))
-# model.add(MaxPool2D())
 model.add(Dropout(0.4))
 
 model.add(Flatten())
@@ -87,11 +81,6 @@ model.compile(optimizer = opt , loss = tf.keras.losses.SparseCategoricalCrossent
 
 model.fit(x_train,y_train,epochs = 10 , validation_data = (x_val, y_val))
 
-# print(weakref.getweakref(model))
-
-# binary_file = open('data.obj', 'wb')
-# pickle.dump(model, binary_file)
-# binary_file.close()
 
 model.save('pickle.h5')
 
