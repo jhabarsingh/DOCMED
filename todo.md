@@ -1,6 +1,6 @@
 ### TASKS
 1. [CT SCAN](https://www.kaggle.com/daenys2000/unet-segmentation)
-  1. [DATASET](https://www.kaggle.com/andrewmvd/covid19-ct-scans/code)
+    * [DATASET](https://www.kaggle.com/andrewmvd/covid19-ct-scans/code)
 3. Frontend
 4. OAuth
 5. Chatbot
