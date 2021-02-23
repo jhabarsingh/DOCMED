@@ -1,19 +1,14 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 import keras
 from keras.models import Sequential
 from keras.layers import Dense, Conv2D , MaxPool2D , Flatten , Dropout 
 from keras.preprocessing.image import ImageDataGenerator
 from keras.optimizers import Adam
-
 from sklearn.metrics import classification_report,confusion_matrix
-
 import tensorflow as tf
-
 import cv2
 import os
-
 import numpy as np
 
 labels = ['covid', 'noncovid']
@@ -36,7 +31,6 @@ def get_data(data_dir):
 train = get_data('./input/train')
 val = get_data('./input/test')
 
-
 l = []
 for i in train:
     if(i[1] == 0):
@@ -55,8 +49,6 @@ plt.title(labels[train[0][1]])
 plt.figure(figsize = (5,5))
 plt.imshow(train[-1][0])
 plt.title(labels[train[-1][1]])
-
-
 
 x_train = []
 y_train = []
