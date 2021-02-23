@@ -1,5 +1,5 @@
 ### TASKS
-1. [CT SCAN](https://www.kaggle.com/andrewmvd/covid19-ct-scans/tasks)
+1. [CT SCAN](https://www.kaggle.com/daenys2000/unet-segmentation)
 2. Frontend
 3. OAuth
 4. Chatbot
