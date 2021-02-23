@@ -1,0 +1,8 @@
+imageio==2.9.0
+nibabel==3.2.1
+numpy==1.19.5
+packaging==20.9
+Pillow==8.1.0
+pkg-resources==0.0.0
+pyparsing==2.4.7
+scipy==1.5.4
