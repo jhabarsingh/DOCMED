@@ -12,3 +12,10 @@
       * `mayanksharma`
 2. DOCTOR
       * `gurumaan`
+
+### ML MODELS
+1. [COVID SYMPTOMS](https://github.com/jhabarsingh/DOCMED/blob/main/covid_symtoms/random_forest.py)
+2. [XRAY PREDICTION](https://github.com/jhabarsingh/XRAY-COVID-PREDICTION/blob/master/corona_api/corona_static/xray_production.py)
+3. [CT SCAN CLASSIFIER](https://github.com/jhabarsingh/DOCMED/blob/main/ct_scan/predit.py)
+4. [CT SEGMENTATION](https://github.com/jhabarsingh/DOCMED/blob/main/ct_scan_segmentation/script.py)
+5. [XRAY CLASSIFIER](https://github.com/jhabarsingh/DOCMED/blob/main/xray_classifier/script.py)
