@@ -11,7 +11,7 @@ import cv2
 import tensorflow as tf
 
 # %% [code]
-data = pd.read_csv('../input/covid19-ct-scans/metadata.csv')
+data = pd.read_csv('input/covid19-ct-scans/metadata.csv')
 data.head()
 
 # %% [code]
@@ -167,7 +167,7 @@ model.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"]
 model.summary()
 
 # %% [code]
-history = model.fit(lung_train, infect_train, epochs = 10, validation_data = (lung_test, infect_test))
+history = model.fit(lung_train, infect_train, epochs = 1, validation_data = (lung_test, infect_test))
 
 # %% [code]
 plt.plot(history.history['accuracy'])
@@ -210,3 +210,4 @@ plt.subplot(1,3,3)
 plt.imshow(lung_test[550][...,0], cmap = 'bone')
 plt.imshow(predicted[550][...,0],alpha = 0.5,cmap = "nipy_spectral")
 plt.title('predicted infection mask')
+
