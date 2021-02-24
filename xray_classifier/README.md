@@ -15,6 +15,7 @@
 	pip install -r requirements.txt
 	```
 8. run the `script.py` file
+
 	```
 	python script.py
 	```
