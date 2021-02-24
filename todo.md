@@ -14,7 +14,7 @@
             5. Output Format
             3. What Model is Used ?
             5. What all models were used ?
-            6. Why your model is better than others?
+            6. Why your choose the above Models?
 
 ### ML MODELS
 1. [COVID SYMPTOMS](https://github.com/jhabarsingh/DOCMED/blob/main/covid_symtoms/random_forest.py)
