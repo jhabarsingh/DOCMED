@@ -7,7 +7,7 @@
 1. CT SCAN SCRIPT
 2. CHATBOT
 4. OAuth
-5. DOC PREPERATION
+5. [DOC PREPERATION](https://docs.google.com/document/d/1XPR-5olyHrHMDU5_5voXNi5yHF3eEK8o4VtmYMlG2-c/edit?usp=sharing)
       1. ML MODELS Doc Should Include
             1. Code Explaination (Brief)
             4. Input Format 
