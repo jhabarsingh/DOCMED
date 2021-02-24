@@ -7,6 +7,14 @@
 1. CT SCAN SCRIPT
 2. CHATBOT
 4. OAuth
+5. DOC PREPERATION
+      1. ML MODELS Doc Should Include
+            1. Code Explaination (Brief)
+            4. Input Format 
+            5. Output Format
+            3. What Model is Used ?
+            5. What all models were used ?
+            6. Why your model is better than others?
 
 ### ML MODELS
 1. [COVID SYMPTOMS](https://github.com/jhabarsingh/DOCMED/blob/main/covid_symtoms/random_forest.py)
