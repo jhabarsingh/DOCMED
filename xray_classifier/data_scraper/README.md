@@ -20,6 +20,7 @@
   chmod +x script.bash
   ```
 10. run the `script.bash` file
+
 	```
 	./script.bash [LINK] # EXAMPLE   /script.bash https://news.google.com/topstories?hl=en-IN&gl=IN&ceid=IN:en
 	```
