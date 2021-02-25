@@ -44,9 +44,6 @@ Features Provided By **DOCMED**
 ![HOME PAGE](
 https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
 
-### ML Model
-![HOME PAGE](
-https://github.com/jhabarsingh/DOCMED/blob/main/docs/ani/ml.gif)
 
 ## Project Setup
 
