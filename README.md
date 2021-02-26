@@ -40,7 +40,7 @@ Features Provided By **DOCMED**
   4. INTERACT WITH **DOCTORS** IN YOUR CITY
   5. [**TRACK COVID CASES**](https://github.com/jhabarsingh/COTRACK) WORLD WIDE OR COUNTRY WISE
 
-### Home Page
+
 ![HOME PAGE](
 https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
 
