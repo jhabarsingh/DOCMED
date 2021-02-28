@@ -32,7 +32,7 @@ recommendations over the user’s medical data.
 ![HOME PAGE](https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
 
 ## Features
-Features Provided By **DOCMED**
+Features Provided By the **DOCMED**
   1. CHATBOT **COVAT** TO RESOLVE YOUR QUERIES
   2. ML MODEL TO PREDICT COVID FROM **SYMTOMS**
   3. ML MODEL TO PREDICT COVID FROM [**CHEST XRAY REPORT**](https://github.com/jhabarsingh/XRAY-COVID-PREDICTION)
