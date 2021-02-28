@@ -57,7 +57,7 @@ ml = [
     path("covid_symtoms_detection/", views.covid_symptoms_detection, 
           name="covid_symptoms_detection"),
     path("covid_symptoms_result/<int:result>/", views.covid_symptoms_result, 
-          name="covid__symptoms_result"),
+          name="covid_symptoms_result"),
     path("covid_xray_prediction", views.covid_xray_prediction, name="covid_xray_prediction"),
 ]
 

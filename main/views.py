@@ -57,15 +57,15 @@ def covid_symptoms_detection(request):
 			counter +=1
 		if(counter == 23):
 			pred[0] = 0
-		return redirect("main:covid_result", pred[0])
-	return render(request, "covid_detection.html", context={"msg" : pred[0]}) 
+		return redirect("main:covid_symptoms_result", pred[0])
+	return render(request, "machine_learning/covid_symptoms_detection.html", context={"msg" : pred[0]}) 
 
-def covid_symtoms_result(request, *args, **kwargs):
+def covid_symptoms_result(request, *args, **kwargs):
 	"""
 	RENDERS PAGE TO DISPLAY COVID RESULT
 	"""
 	data = int(kwargs.get("result")) * 10
-	return render(request, "covid_result.html", {"result" : data})
+	return render(request, "machine_learning/covid_symptoms_result.html", {"result" : data})
 
 def covid_xray_prediction(request, *args, **kwargs):
 	"""
