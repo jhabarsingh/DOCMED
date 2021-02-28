@@ -89,13 +89,18 @@ def covid_xray_prediction(request, *args, **kwargs):
 		image = request.FILES['file']
 		image = Image.open(image).convert('RGB')
 		data = predict_from_xray(image)
-		print(data)
-		return render(request, 'machine_learning/covid_xray_prediction.html', {
-            'data': data
-        })
+		return redirect("main:covid_xray_result", data)
 	return render(request, "machine_learning/covid_xray_prediction.html", {
 			'data': 'false'
 		})
+
+
+def covid_xray_result(request, *args, **kwargs):
+	"""
+	RENDERS PAGE TO DISPLAY COVID RESULT
+	"""
+	data = kwargs.get("result")
+	return render(request, "machine_learning/covid_xray_result.html", {"result" : data})
 
 
 """ Non Machine Learning Views
