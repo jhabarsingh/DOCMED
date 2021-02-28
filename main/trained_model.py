@@ -15,13 +15,19 @@ import os
 warnings.filterwarnings('ignore')
 
 
-def joiner(file_name):
-    return os.path.join(os.path.dirname(os.path.abspath(__file__)), file_name)
+def joiner(folder_name, file_name):
+	paths = os.path.dirname(os.path.abspath(__file__))
+	paths = os.path.dirname(paths)
+	paths = os.path.join(paths, folder_name)
+	paths = os.path.join(paths, file_name)
 
+	return paths
+
+	return paths
 from sklearn.ensemble import RandomForestClassifier
 
-def predict(a):
-	with open(joiner('data.obj'), 'rb') as rfile:
+def predict_covid_from_symptoms(a):
+	with open(joiner('covid_symtoms', 'pickled_model.obj'), 'rb') as rfile:
 		binary_file = pickle.load(rfile)
 	rfc1 = binary_file
 	import random

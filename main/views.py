@@ -10,7 +10,7 @@ from time import  sleep
 from main.utils import render_to_pdf
 from django.views.generic import View
 from django.contrib.auth.models import User
-from .trained_model import predict
+from .trained_model import predict_covid_from_symptoms
 from .models import Contact
 from django.core.paginator import Paginator
 from django.db.models import Q
@@ -47,7 +47,7 @@ def covid_symptoms_detection(request):
 		if(int(gender) > 0):
 			params[17] = 0
 			params[17 + int(gender)] = 1
-	pred = predict(params)
+	pred = predict_covid_from_symptoms(params)
 	if(request.POST):
 		p = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
 		counter = 0
