@@ -2,3 +2,4 @@ env
 input
 __pycache__
 xray_classifier/*.h5
+dummy.*
