@@ -35,8 +35,7 @@ def main(argv):
     if ask_rotate.lower() == 'y':
         #ask_rotate_num = int(input('OK. By 90° 180° or 270°? '))
         ask_rotate_num = 90
-	
-	if ask_rotate_num == 90 or ask_rotate_num == 180 or ask_rotate_num == 270:
+        if ask_rotate_num == 90 or ask_rotate_num == 180 or ask_rotate_num == 270:
             print('Got it. Your images will be rotated by {} degrees.'.format(ask_rotate_num))
         else:
             print('You must enter a value that is either 90, 180, or 270. Quitting...')
@@ -108,11 +107,11 @@ def main(argv):
 
         print('Reading NIfTI file...')
 
-        total_slices = image_array.shape[2]
+        total_slices = 150
 
         slice_counter = 0
         # iterate through slices
-        for current_slice in range(0, total_slices):
+        for current_slice in range(150, total_slices + 1):
             # alternate slices
             if (slice_counter % 1) == 0:
                 # rotate or no rotate
