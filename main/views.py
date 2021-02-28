@@ -27,6 +27,13 @@ def home(request):
 	all the views for the ML models being
 	used in the project
 """
+
+def ml_models(request):
+	"""
+	Entry Page for all the Ml Models;
+	"""
+	return render(request, "machine_learning/ml_models.html")
+
 def covid_symptoms_detection(request):
 	"""
 	COVID DETECTION ML MODEL LOGIC PART

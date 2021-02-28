@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+<style type="text/css">
+	.outer {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.inner {
+		width: 100%;
+		display: block;
+	}
+
+	button {
+		border: 0px solid transparent;
+		outline: none;
+		padding: 10px 20px;
+		background: orange;
+	}
+</style>
+<!--
+	<a href="{% url 'main:covid_symptoms_detection' %}" class="mx-2 text-light covid">Predict Covid</a>
+-->
+<div class="outer">
+	<div class="inner">
+		<button>
+			Predict Covid From Xray
+		</button>
+	</div>
+	
+	<div class="inner">
+		<button>
+			Predict Covid From CTScan
+		</button>
+	</div>
+
+	<div class="inner">
+		<button>
+			Predict Covid From CTScan Segmentation
+		</button>
+	</div>
+
+	<div class="inner">
+		<button>
+			Predict Covid From Symtoms
+		</button>
+	</div>
+</div>
+{% endblock %}

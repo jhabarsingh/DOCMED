@@ -54,6 +54,8 @@ urlpatterns = [
 ]
 
 ml = [
+    path("ml_models/", views.ml_models, 
+          name="ml_models"),
     path("covid_symtoms_detection/", views.covid_symptoms_detection, 
           name="covid_symptoms_detection"),
     path("covid_symptoms_result/<int:result>/", views.covid_symptoms_result, 
