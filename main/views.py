@@ -21,7 +21,12 @@ def home(request):
 	"""
 	return render(request, "card.html")
 
-# Machine Learning Models
+""" Machine Learning Models
+    ------------------------
+	This section of the code will contain 
+	all the views for the ML models being
+	used in the project
+"""
 def covid_symptoms_detection(request):
 	"""
 	COVID DETECTION ML MODEL LOGIC PART
@@ -62,14 +67,20 @@ def covid_symtoms_result(request, *args, **kwargs):
 	data = int(kwargs.get("result")) * 10
 	return render(request, "covid_result.html", {"result" : data})
 
-
 def covid_xray_prediction(request, *args, **kwargs):
 	"""
 	Covid Detectoin From Xray Report
 	"""
 	return render(request, "machine_learning/covid_xray_prediction.html")
 
-# Others
+
+""" Non Machine Learning Views
+    ------------------------
+	This section of the code will contain 
+	all the views except ML models being
+	used in the project
+"""
+
 def contact(request):
 	"""
 	PAGE TO RENDER CONTACT DETAILS 
