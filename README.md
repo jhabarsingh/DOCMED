@@ -19,11 +19,7 @@
 </div>
 </details>
 
-![HOME PAGE](
-https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
-
-
-## About 
+## Abstract
 To improve the conventional diagnostic procedures as they are prone to human
 mistakes and these are slow, expensive and not equally accessible to everyone therefore 
 we developed an efficient ML model for predicting the possibility of various
@@ -32,6 +28,10 @@ based dashboard which will also provide some additional insights and
 recommendations over the user’s medical data.
 [Read More](https://docs.google.com/document/d/1q19CVPYDygCHwYQ6YYb1oWLqrlC6ymcc14U_EjeX64w/edit?usp=sharing)
 
+
+![HOME PAGE](https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
+
+## Features
 Features Provided By **DOCMED**
   1. CHATBOT **COVAT** TO RESOLVE YOUR QUERIES
   2. ML MODEL TO PREDICT COVID FROM **SYMTOMS**
