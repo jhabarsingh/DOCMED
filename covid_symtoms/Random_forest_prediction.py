@@ -98,7 +98,6 @@ pred = rfc1.predict(X_test)
 binary_file = open('data.obj', 'wb')
 pickle.dump(rfc1, binary_file)
 binary_file.close()
-pred
 
 from sklearn.metrics import accuracy_score
 print("Accuracy for Random Forest on CV data: ",accuracy_score(y_test,pred))
