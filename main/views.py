@@ -21,7 +21,8 @@ def home(request):
 	"""
 	return render(request, "card.html")
 
-def covid_detection(request):
+# Machine Learning Models
+def covid_symptoms_detection(request):
 	"""
 	COVID DETECTION ML MODEL LOGIC PART
 	"""
@@ -54,13 +55,21 @@ def covid_detection(request):
 		return redirect("main:covid_result", pred[0])
 	return render(request, "covid_detection.html", context={"msg" : pred[0]}) 
 
-def covid_result(request, *args, **kwargs):
+def covid_symtoms_result(request, *args, **kwargs):
 	"""
 	RENDERS PAGE TO DISPLAY COVID RESULT
 	"""
 	data = int(kwargs.get("result")) * 10
 	return render(request, "covid_result.html", {"result" : data})
 
+
+def covid_xray_prediction(request, *args, **kwargs):
+	"""
+	Covid Detectoin From Xray Report
+	"""
+	return render(request, "machine_learning/covid_xray_prediction.html")
+
+# Others
 def contact(request):
 	"""
 	PAGE TO RENDER CONTACT DETAILS 

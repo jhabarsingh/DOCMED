@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Corona Xray</title>
+	<link rel="icon" href="https://specials-images.forbesimg.com/imageserve/5e74f4b010380d0006bdbd41/960x0.jpg?fit=scale" type="image/gif" sizes="32x32">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<style>
+		body {
+			min-height: 100vh;
+			position: relative;
+		}
+		.body::before {
+			content: '';
+			background: url('https://www.athina984.gr/wp-content/uploads/2020/10/covid-19.jpg');
+			position: absolute;
+			opacity: .8;
+			top:0px;
+			left:0px;
+			bottom: 0px;
+			right: 0px;
+			background-size: cover;
+			z-index: -1;
+		}
+
+		.header {
+			text-align: center;
+			padding: 20px;
+		}
+
+		.buttons {
+			margin: 20px auto;
+			padding: 20px 50px;	
+			font-size: 30px;
+			font-weight: bold;
+			text-transform: uppercase;
+			border-radius: 50px;
+			color: white;
+			background: rgba(0, 0, 0, .1);
+			border: 1px solid lightgray;
+			box-shadow: 0 0 40px 2px rgba(0, 0, 0, .4);
+			text-shadow: 1px 2px 5px black;
+			transition: 300ms linear;
+		}
+
+		.buttons:hover {
+			background: rgba(0, 0, 0, .2);
+			transition: 300ms linear;
+			color: white;
+		}
+		
+		section > form {
+			max-width: 500px;
+			margin: auto;
+		}
+		section label {
+			font-size: 40px;
+			font-weight: bold;
+			color: white;
+			text-shadow: 0 0 10px black;
+		}
+
+		section input:nth-child(1) {
+			padding: 20px;
+			font-size: 20px;
+			color: white;
+		}
+
+		form {
+			background: rgba(0, 0, 0, .4);
+			border-radius: 50px;
+		}
+		
+		form * {
+			margin-top: 20px;
+		}
+		
+		input:nth-child(1) * {
+			background: lightgreen;
+		}
+		
+		.data {
+			color: white;
+			max-width: 500px;
+			padding: 10px;
+			background: rgba(0, 0, 0, .4);
+			border-radius: 50px;
+			margin: auto;
+			font-size: 25px;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="body">
+		<div class='header'>
+			<h1 class="buttons m-auto btn">Predict Corona From Xray  Report </h1>
+		</div>
+		<section>
+				<form>
+				  <div class="form-group shadow p-5 mt-5">
+				    <label for="exampleFormControlFile1">XRAY REPORT</label>
+				    <input type="file" class="text-light form-control-file" id="exampleFormControlFile1">
+				  	<input type="submit">
+				  </div>
+				</form>
+				<div class="data">
+					<div class="spinner-border" role="status">
+					  <span class="sr-only">Loading...</span>
+					</div>
+				</div>
+		</section>
+	</div>
+	<script>
+		url = 'http://localhost:8000/corona_xray/';
+		html = '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>';
+
+
+		function getBase64(file) {
+		   var reader = new FileReader();
+		   reader.readAsDataURL(file);
+		   reader.onload = function () {
+		     console.log(reader.result);
+		   };
+		   reader.onerror = function (error) {
+		     console.log('Error: ', error);
+		   };
+		}
+		
+		document.querySelector('form [type="submit"]').addEventListener('click', (event) => {
+			event.preventDefault();
+			const inputFiles = document.querySelectorAll('input[type="file"]');
+			const formData = new FormData();
+
+			for (const file of inputFiles) {
+			    formData.append(file.name, file.files[0]);
+			}
+			console.log(formData)
+			// image = document.querySelector('form [type="file"]')
+			// file = getBase64(image.files[0])
+			fetch(url, {
+				method: 'POST',
+				data: formData,
+				mode: 'no-cors'
+
+			}).then(res => {
+				return res.json
+			}).then( res => {
+				console.log(res)
+			})
+			return false
+		})
+		document.querySelector('.data').innerHTML(html);
+	</script>
+</body>
+</html>

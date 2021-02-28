@@ -5,10 +5,7 @@ app_name="main"
 
 urlpatterns = [
     path("",views.home,  name="home"),
-    path("covid_detection/", views.covid_detection, 
-          name="covid_detection"),
-    path("covid_result/<int:result>/", views.covid_result, 
-          name="covid_result"),
+  
     path("message/<slug:doctor>/", views.message, 
           name="message"),
     path("doctor_list/", views.doctor_list, 
@@ -48,7 +45,6 @@ urlpatterns = [
     path("confirm_deletes/<int:id>", views.confirm_deletes, 
           name="confirm_deletes"),
 
-
     path("hr_dashboard", views.hr_dashboard, name="hr_dashboard"),
     path("doctor_profile_hr/<int:id>/", views.doctor_profile_hr, 
           name="doctor_profile_hr"),
@@ -56,3 +52,14 @@ urlpatterns = [
     path("confirm_deletes_hr/<int:id>", views.confirm_deletes_hr, 
           name="confirm_deletes_hr"),
 ]
+
+ml = [
+    path("covid_symtoms_detection/", views.covid_symptoms_detection, 
+          name="covid_symptoms_detection"),
+    path("covid_symptoms_result/<int:result>/", views.covid_symptoms_result, 
+          name="covid__symptoms_result"),
+    path("covid_xray_prediction", views.covid_xray_prediction, name="covid_xray_prediction"),
+]
+
+
+urlpatterns += ml
