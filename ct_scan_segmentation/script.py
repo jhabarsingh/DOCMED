@@ -67,6 +67,10 @@ infections = np.array(infections)
 
 print(lungs.shape)
 
+from PIL import Image
+im = Image.fromarray(infections[0])
+im.save("your_file.jpeg")
+
 print(infections.shape)
 
 from sklearn.model_selection import train_test_split
