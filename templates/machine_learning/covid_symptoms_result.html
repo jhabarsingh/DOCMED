@@ -12,7 +12,7 @@
 		padding: 50px;
 		margin: auto;
 		border-radius: 10px;
-		width: 180px;
+		width: 200px;
 		display: flex;
 		text-align: center;
 		position: relative;
@@ -47,7 +47,15 @@
 </style>
 <div class="parent">
 		<div class="result">
-			<h2>{{ result }} %</h2>
+			{% if result == 0 %}
+				<h2>No Risk</h2>
+			{% elif result == 10 %}
+				<h2>Low Risk</h2>
+			{% elif result == 20 %}
+				<h2> Moderate Risk</h2>
+			{% else %}
+				<h2>High Risk</h2>
+			{% endif %}
 		</div>
 
 		<div style="position:relative; top: 250px;text-align: center;">
@@ -60,7 +68,16 @@
 
 			<div class="h5  pt-4 pb-2">
 				<b>Note</b>  <br>
-				You have <span style="color:red;font-weight: bolder;font-size:30px;">{{result}}%</span> Chances of Having 
+				{% if result == 0 %}
+					<span style="color:red;font-weight: bolder;font-size:30px;">No Risk</span> To 
+				{% elif result == 10 %}
+					<span style="color:red;font-weight: bolder;font-size:30px;">Low Risk</span> To 
+				{% elif result == 20 %}
+					<span style="color:red;font-weight: bolder;font-size:30px;">Moderate Risk</span> To 
+				{% else %}
+					<span style="color:red;font-weight: bolder;font-size:30px;">High Risk</span> To 
+				{% endif %}
+				
 				<button type="button" class="btn btn-primary">
 				  COVID-19 
 				</button>

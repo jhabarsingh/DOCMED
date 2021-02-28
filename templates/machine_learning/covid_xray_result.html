@@ -62,15 +62,15 @@
 				<b>Note</b>  <br>
 				{% if result == "covid" %}
 					You are <span style="color:red;font-weight: bolder;font-size:30px;">{{result}}</span> Positive 
+					<button type="button" class="btn btn-primary">
+					  COVID-19 
+					</button>
 				{% elif result == "viral" %}
 					You just have <span style="color:red;font-weight: bolder;font-size:30px;">{{result}}</span> 
 				{% else %}
 					You are <span style="color:red;font-weight: bolder;font-size:30px;">{{result}}</span> 
 				{% endif %}
 
-					<button type="button" class="btn btn-primary">
-					  COVID-19 
-					</button>
 			</div>
 		</div>
 </div>

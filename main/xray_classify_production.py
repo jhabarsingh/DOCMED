@@ -16,7 +16,7 @@ from keras.models import load_model
 img_size = 224
 
 # Loading Pickeled Model
-model = load_model('pickle.h5')
+model = None
 
 def readImage(image):
     image = cv2.imread(image)
@@ -30,12 +30,21 @@ def readImage(image):
     data = np.array(train) / 255
     return data
 
+def joiner(folder_name, file_name):
+    paths = os.path.dirname(os.path.abspath(__file__))
+    paths = os.path.dirname(paths)
+    paths = os.path.join(paths, folder_name)
+    paths = os.path.join(paths, file_name)
+    return paths
+
+with open(joiner('xray_classifier', 'pickle.h5'), 'rb') as rfile:
+    model = load_model(rfile)
 
 def classify_xray(image):
     imageName = image
     data = readImage(imageName)
     predictions = model.predict_classes(data)
-    if(predictions[0] == 0)
+    if predictions[0] == 0:
         return "covid"
     return "nocovid"
 

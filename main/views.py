@@ -18,7 +18,7 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 from django.core.files.storage import FileSystemStorage
 from PIL import Image
-
+from .xray_classify_production import *
 
 def home(request):
 	"""
@@ -87,6 +87,8 @@ def covid_xray_prediction(request, *args, **kwargs):
 	"""
 	if request.method == 'POST' and request.FILES['file']:
 		image = request.FILES['file']
+		hasCovid = classify_xray(image)
+		print(hasCovid)
 		image = Image.open(image).convert('RGB')
 		data = predict_from_xray(image)
 		return redirect("main:covid_xray_result", data)
