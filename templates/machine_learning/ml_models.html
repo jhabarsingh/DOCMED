@@ -4,47 +4,84 @@
 {% block content %}
 <style type="text/css">
 	.outer {
-		display: flex;
-		justify-content: space-around;
+
+	}
+
+	.inner:nth-child(1) {
+		margin-top: 30px;
 	}
 
 	.inner {
 		width: 100%;
 		display: block;
+		text-align: center;
+		transition: 500ms linear;
+	}
+
+	.inner:hover {
+		transform: translateY(-3px);
+		opacity: .7;
+		transition: 500ms linear;
 	}
 
 	button {
-		border: 0px solid transparent;
+		border: none;
+		min-width: 400px;
+		border-radius: 10px;
 		outline: none;
-		padding: 10px 20px;
+		padding: 20px 40px;
 		background: orange;
+		color: white;
+		font-weight: bold;
+		font-family: ubuntu;
+		letter-spacing: 1px;
+		margin: 10px;
 	}
+
+	a {
+		text-decoration: none;
+		color: white;
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: white;
+	}
+
 </style>
 <!--
-	<a href="{% url 'main:covid_symptoms_detection' %}" class="mx-2 text-light covid">Predict Covid</a>
+	<a href="" class="mx-2 text-light covid">Predict Covid</a>
 -->
 <div class="outer">
 	<div class="inner">
 		<button>
-			Predict Covid From Xray
+			<a href="{% url 'main:covid_symptoms_detection' %}">
+				Predict Covid From Xray
+			</a>
 		</button>
 	</div>
 	
 	<div class="inner">
 		<button>
-			Predict Covid From CTScan
+			<a href="{% url 'main:covid_symptoms_detection' %}">
+				Predict Covid From CTScan
+			</a>
 		</button>
 	</div>
 
 	<div class="inner">
 		<button>
-			Predict Covid From CTScan Segmentation
+			<a href="{% url 'main:covid_symptoms_detection' %}">
+				Predict Covid From CTScan Segmentation
+			</a>
 		</button>
 	</div>
 
 	<div class="inner">
 		<button>
-			Predict Covid From Symtoms
+			<a href="{% url 'main:covid_symptoms_detection' %}">
+				Predict Covid From Symtoms
+			</a>
 		</button>
 	</div>
 </div>
