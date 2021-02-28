@@ -6,20 +6,26 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import  authenticate, login as auth_login , logout
 from django.http import HttpResponse, HttpResponseRedirect
 from main.decorators import is_valid_patient, is_valid_doctor, is_valid_receptionist, is_valid_hr, is_valid_patientOrhr
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from time import  sleep
 from main.utils import render_to_pdf
 from django.views.generic import View
 from django.contrib.auth.models import User
-from .trained_model import predict_covid_from_symptoms
+from .xray_production import predict_from_xray
+from .symptoms_production import predict_covid_from_symptoms
 from .models import Contact
 from django.core.paginator import Paginator
 from django.db.models import Q
+from django.core.files.storage import FileSystemStorage
+from PIL import Image
+
 
 def home(request):
 	"""
 	RENDERS HOME PAGE
 	"""
 	return render(request, "card.html")
+
 
 """ Machine Learning Models
     ------------------------
@@ -74,11 +80,22 @@ def covid_symptoms_result(request, *args, **kwargs):
 	data = int(kwargs.get("result")) * 10
 	return render(request, "machine_learning/covid_symptoms_result.html", {"result" : data})
 
+@csrf_exempt
 def covid_xray_prediction(request, *args, **kwargs):
 	"""
 	Covid Detectoin From Xray Report
 	"""
-	return render(request, "machine_learning/covid_xray_prediction.html")
+	if request.method == 'POST' and request.FILES['file']:
+		image = request.FILES['file']
+		image = Image.open(image).convert('RGB')
+		data = predict_from_xray(image)
+		print(data)
+		return render(request, 'machine_learning/covid_xray_prediction.html', {
+            'data': data
+        })
+	return render(request, "machine_learning/covid_xray_prediction.html", {
+			'data': 'false'
+		})
 
 
 """ Non Machine Learning Views

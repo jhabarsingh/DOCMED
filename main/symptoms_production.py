@@ -14,17 +14,15 @@ import warnings
 import os
 warnings.filterwarnings('ignore')
 
+from sklearn.ensemble import RandomForestClassifier
 
 def joiner(folder_name, file_name):
 	paths = os.path.dirname(os.path.abspath(__file__))
 	paths = os.path.dirname(paths)
 	paths = os.path.join(paths, folder_name)
 	paths = os.path.join(paths, file_name)
-
 	return paths
 
-	return paths
-from sklearn.ensemble import RandomForestClassifier
 
 def predict_covid_from_symptoms(a):
 	with open(joiner('covid_symtoms', 'pickled_model.obj'), 'rb') as rfile:
