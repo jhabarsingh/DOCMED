@@ -3,4 +3,5 @@ input
 __pycache__
 xray_classifier/*.h5
 dummy.*
+*/chest_xray_classifier/pickle.h5
 */ctscan_covid_prediction/images
