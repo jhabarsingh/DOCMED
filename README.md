@@ -1,7 +1,7 @@
 # DOCMED  ⚡️ [![GitHub](https://img.shields.io/github/license/jhabarsingh/DOCMED?color=blue)](https://github.com/jhabarsingh/DOCMED/blob/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/jhabarsingh/DOCMED)](https://github.com/jhabarsingh/DDOCMED/stargazers)  [![GitHub contributors](https://img.shields.io/github/contributors/jhabarsingh/DOCMED.svg)](https://github.com/jhabarsingh/DOCMED/graphs/contributors)  [![GitHub issues](https://img.shields.io/github/issues/jhabarsingh/DOCMED.svg)](https://github.com/jhabarsingh/DOCMED/issues) [![GitHub forks](https://img.shields.io/github/forks/jhabarsingh/DOCMED.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/jhabarsingh/DOCMED/network/)
 
 <p align="center">
-  <img src="https://github.com/jhabarsingh/DOCMED/blob/main/docs/ani/docmed.png?raw=true" />
+  <img src="https://github.com/jhabarsingh/DOCMED/blob/main/docs/animations/docmed.png?raw=true" />
 </p>
 <details>
   <summary>:zap: TECH STACK</summary>
@@ -29,7 +29,7 @@ recommendations over the user’s medical data.
 [Read More](https://docs.google.com/document/d/1q19CVPYDygCHwYQ6YYb1oWLqrlC6ymcc14U_EjeX64w/edit?usp=sharing)
 
 
-![HOME PAGE](https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/ani/chatbot.gif)
+![HOME PAGE](https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/animations/chatbot.gif)
 
 ## Features
 Features Provided By the **DOCMED**
