@@ -21,8 +21,8 @@ model = None
 
 def readImage(image):
     # image = cv2.imread(image)
-    # resized_arr = cv2.resize(image, (img_size, img_size))
-    # data = []
+    resized_arr = cv2.resize(image, (img_size, img_size))
+    data = []
     data.append([image, "noncovid"])
     data = np.array(data)
     train = []

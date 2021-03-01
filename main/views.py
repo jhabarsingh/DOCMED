@@ -92,7 +92,8 @@ def covid_xray_prediction(request, *args, **kwargs):
 	"""
 	if request.method == 'POST' and request.FILES['file']:
 		image = request.FILES['file']
-		img = cv2.imdecode(numpy.fromstring(request.FILES['file'].read(), numpy.uint8), cv2.IMREAD_UNCHANGED)
+		nparr = numpy.fromstring(image, numpy.uint8)
+		img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 		hasCovid = classify_xray(img)
 		print(hasCovid)
 		if hasCovid == 'noncovid':
