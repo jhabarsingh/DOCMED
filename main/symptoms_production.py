@@ -25,7 +25,7 @@ def joiner(folder_name, file_name):
 
 
 def predict_covid_from_symptoms(a):
-	with open(joiner('covid_symtoms', 'pickled_model.obj'), 'rb') as rfile:
+	with open(joiner('machine_learning_models/symptoms_covid_prediction', 'pickled_model.obj'), 'rb') as rfile:
 		binary_file = pickle.load(rfile)
 	rfc1 = binary_file
 	import random
