@@ -12,7 +12,7 @@ import os
 import numpy as np
 import pickle
 from keras.models import load_model
-from io import BytesIO
+from io import 
 import h5py
 
 
@@ -85,7 +85,7 @@ model.compile(optimizer = opt , loss = tf.keras.losses.SparseCategoricalCrossent
 model.fit(x_train,y_train,epochs = 10 , validation_data = (x_val, y_val))
 
 """
-with h5py.File('does not matter', driver='core', backing_store=False) as h5file:
+with h5py.File('pickle.h5', driver='core', backing_store=False) as h5file:
     model.save(h5file)
     h5file.flush()
     serialized = h5file.id.get_file_image().hex()
