@@ -11,7 +11,8 @@ import cv2
 import os
 import numpy as np
 from keras.models import load_model
-
+from io import BytesIO
+import h5py
 
 img_size = 224
 
@@ -19,7 +20,7 @@ img_size = 224
 model = None
 
 def readImage(image):
-    image = cv2.imread(image)
+    # image = cv2.imread(image)
     resized_arr = cv2.resize(image, (img_size, img_size))
     data = []
     data.append([resized_arr, "noncovid"])
@@ -33,13 +34,13 @@ def readImage(image):
 def joiner(folder_name, file_name):
     paths = os.path.dirname(os.path.abspath(__file__))
     paths = os.path.dirname(paths)
-    paths = os.path.join(paths, 'machine_learning_models')
+    paths = os.path.join(paths,'machine_learning_models')
     paths = os.path.join(paths, folder_name)
     paths = os.path.join(paths, file_name)
     return paths
 
-with open(joiner('chest_xray_classifier', 'pickle.h5'), 'rb') as rfile:
-    model = load_model(rfile)
+
+model = load_model(joiner('chest_xray_classifier', 'pickle.h5'))
 
 def classify_xray(image):
     imageName = image
@@ -47,7 +48,7 @@ def classify_xray(image):
     predictions = model.predict_classes(data)
     if predictions[0] == 0:
         return "covid"
-    return "nocovid"
+    return "noncovid"
 
 
 
