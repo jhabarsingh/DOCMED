@@ -21,6 +21,7 @@ from PIL import Image
 from .xray_classify_production import classify_xray
 import cv2
 import os
+import numpy
 
 def home(request):
 	"""
@@ -91,8 +92,8 @@ def covid_xray_prediction(request, *args, **kwargs):
 	"""
 	if request.method == 'POST' and request.FILES['file']:
 		image = request.FILES['file']
-		image1 = cv2.imread(os.path.join(os.path.dirname(os.path.abspath(__file__)), image))[...,::-1]
-		hasCovid = classify_xray(image1)
+		img = cv2.imdecode(numpy.fromstring(request.FILES['file'].read(), numpy.uint8), cv2.IMREAD_UNCHANGED)
+		hasCovid = classify_xray(img)
 		print(hasCovid)
 		if hasCovid == 'noncovid':
 			return render(request, "machine_learning/covid_xray_prediction.html", {
