@@ -37,7 +37,7 @@ def joiner(folder_name, file_name):
     paths = os.path.join(paths, file_name)
     return paths
 
-with open(joiner('xray_classifier', 'pickle.h5'), 'rb') as rfile:
+with open(joiner('machine_learning_models/chest_xray_classifier', 'pickle.h5'), 'rb') as rfile:
     model = load_model(rfile)
 
 def classify_xray(image):
