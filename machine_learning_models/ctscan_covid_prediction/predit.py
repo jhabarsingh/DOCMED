@@ -296,36 +296,36 @@ model = models.resnet18(pretrained=True).cpu()
 modelname = 'ResNet18'
 
 
-### Dense121
-import torchvision.models as models
-model = models.densenet121(pretrained=True).cpu()
-modelname = 'Dense121'
+# ### Dense121
+# import torchvision.models as models
+# model = models.densenet121(pretrained=True).cpu()
+# modelname = 'Dense121'
 
 
-### Dense169
-import torchvision.models as models
-model = models.densenet169(pretrained=True).cpu()
-modelname = 'Dense169'
+# ### Dense169
+# import torchvision.models as models
+# model = models.densenet169(pretrained=True).cpu()
+# modelname = 'Dense169'
 
 
-### ResNet50
-import torchvision.models as models
-model = models.resnet50(pretrained=True).cpu()
-modelname = 'ResNet50'
+# ### ResNet50
+# import torchvision.models as models
+# model = models.resnet50(pretrained=True).cpu()
+# modelname = 'ResNet50'
 
 
-### VGGNet
-import torchvision.models as models
-model = models.vgg16(pretrained=True)
-model = model.cpu()
-modelname = 'vgg16'
+# ### VGGNet
+# import torchvision.models as models
+# model = models.vgg16(pretrained=True)
+# model = model.cpu()
+# modelname = 'vgg16'
 
 
-### efficientNet
-from efficientnet_pytorch import EfficientNet
-model = EfficientNet.from_pretrained('efficientnet-b0', num_classes=2)
-model = model.cpu()
-modelname = 'efficientNet-b0'
+# ### efficientNet
+# from efficientnet_pytorch import EfficientNet
+# model = EfficientNet.from_pretrained('efficientnet-b0', num_classes=2)
+# model = model.cpu()
+# modelname = 'efficientNet-b0'
 
 
 # train
