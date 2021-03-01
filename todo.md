@@ -16,6 +16,9 @@
             3. What Model is Used ?
             5. What all models were used ?
             6. Why your choose the above Models?
+6. Remove ctscan covid prediction data
+7. Remove xray covid prediction data
+
 
 ### ML MODELS
 1. [COVID SYMPTOMS](https://github.com/jhabarsingh/DOCMED/blob/main/machine_learning_models/chest_xray_classifier/script.py)
