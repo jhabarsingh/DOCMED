@@ -5,7 +5,7 @@
 3. Frontend
 -->
 1. CT SCAN SCRIPT `28 feb`
-2. CHATBOT
+2. [CHATBOT](https://marutitech.com/build-a-chatbot-using-dialogflow/) 
 3. OAuth
 4. ML Model Connect with backend `28 feb`
 5. [DOC PREPERATION](https://docs.google.com/document/d/1XPR-5olyHrHMDU5_5voXNi5yHF3eEK8o4VtmYMlG2-c/edit?usp=sharing) `28 feb`
