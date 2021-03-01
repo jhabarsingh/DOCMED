@@ -21,11 +21,12 @@ source_dirs = ['NORMAL', 'Viral Pneumonia', 'COVID-19']
 def joiner(folder_name, file_name):
     paths = os.path.dirname(os.path.abspath(__file__))
     paths = os.path.dirname(paths)
+    paths = os.path.join(paths, "machine_learning_models")
     paths = os.path.join(paths, folder_name)
     paths = os.path.join(paths, file_name)
     return paths
 
-with open(joiner('machine_learning_models/xray_covid_prediction', 'pick_resnet18.obj'), 'rb') as rfile:
+with open(joiner('xray_covid_prediction', 'pick_resnet18.obj'), 'rb') as rfile:
     resnet18 = pickle.load(rfile)
 
 
@@ -36,11 +37,9 @@ class ChestXRayDataset(torch.utils.data.Dataset):
     def __init__(self, image_dirs, transform):
         def get_images(class_name):
             path = os.path.dirname(os.path.abspath(__file__))
-            print(path, 'aaaaaaaaaaaaa')
-            images = [x for x in os.listdir(joiner('corona_viral_detector',image_dirs[class_name])) \
+            images = [x for x in os.listdir(joiner('xray_covid_prediction',image_dirs[class_name])) \
                      if x.lower().endswith('png')]
-            
-            print(f'Found {len(images)} {class_name} examples')
+        
             return images
 
         self.images = {}
@@ -88,9 +87,9 @@ test_transform = torchvision.transforms.Compose([
 # Prepare DataLoader
 
 test_dirs = {
-    'normal': joiner('corona_viral_detector', 'COVID-19 Radiography Database/test/normal'),
-    'viral': joiner('corona_viral_detector', 'COVID-19 Radiography Database/test/viral'),
-    'covid': joiner('corona_viral_detector', 'COVID-19 Radiography Database/test/covid'),
+    'normal': joiner('xray_covid_prediction', 'COVID-19 Radiography Database/test/normal'),
+    'viral': joiner('xray_covid_prediction', 'COVID-19 Radiography Database/test/viral'),
+    'covid': joiner('xray_covid_prediction', 'COVID-19 Radiography Database/test/covid'),
 }
 
 test_dataset = ChestXRayDataset(test_dirs, test_transform) 
@@ -105,7 +104,6 @@ def predict_from_xray(image):
     images, labels = next(iter(dl_test))
     image = image
     images[0] = test_transform(image)
-    print(np.ndim(images))
     outputs = resnet18(images)
     _, preds = torch.max(outputs, 1)
     return result(images, labels, preds)
