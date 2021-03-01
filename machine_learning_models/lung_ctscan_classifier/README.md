@@ -1,8 +1,8 @@
-# XRAY CLASSIFIER
+# CTSCAN CLASSIFIER
 
 ## STEPS
 1. Download data from [LINK](https://github.com/mltuts1998/xray_classifier/tree/main/input)
-2. extract in the `xray-classifier` folder
+2. extract in thid folder
 5. download the `script.py` file present in this repo
 6. download the `requirements.txt` file from this repo
 6. create a virtual env
