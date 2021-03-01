@@ -111,9 +111,15 @@
 				  </div>
 				</form>
 				<div class="data">
-					<div class="spinner-border" role="status">
-					  <span class="sr-only">Loading...</span>
-					</div>
+					{% id data == 'false' %}
+						<div class="spinner-border" role="status">
+						  <span class="sr-only">Loading...</span>
+						</div>
+					{% else %}
+						<div class="spinner-border" role="status">
+						  <span class="">Supports Only Chest Xray images</span>
+						</div>
+					{% endif %}
 				</div>
 		</section>
 	</div>
