@@ -20,6 +20,7 @@ from django.core.files.storage import FileSystemStorage
 from PIL import Image
 from .xray_classify_production import classify_xray
 import cv2
+import os
 
 def home(request):
 	"""
@@ -74,12 +75,14 @@ def covid_symptoms_detection(request):
 		return redirect("main:covid_symptoms_result", pred[0])
 	return render(request, "machine_learning/covid_symptoms_detection.html", context={"msg" : pred[0]}) 
 
+
 def covid_symptoms_result(request, *args, **kwargs):
 	"""
 	RENDERS PAGE TO DISPLAY COVID RESULT
 	"""
 	data = int(kwargs.get("result")) * 10
 	return render(request, "machine_learning/covid_symptoms_result.html", {"result" : data})
+
 
 @csrf_exempt
 def covid_xray_prediction(request, *args, **kwargs):
@@ -88,15 +91,14 @@ def covid_xray_prediction(request, *args, **kwargs):
 	"""
 	if request.method == 'POST' and request.FILES['file']:
 		image = request.FILES['file']
-		image = Image.open(image).convert('RGB')
-		image1 = cv2.imread(image)
+		image1 = cv2.imread(os.path.join(os.path.dirname(os.path.abspath(__file__)), image))[...,::-1]
 		hasCovid = classify_xray(image1)
 		print(hasCovid)
 		if hasCovid == 'noncovid':
 			return render(request, "machine_learning/covid_xray_prediction.html", {
 				'data': 'true'
 			})
-		# image = Image.open(image).convert('RGB')
+		image = Image.open(image).convert('RGB')
 		data = predict_from_xray(image)
 		return redirect("main:covid_xray_result", data)
 	return render(request, "machine_learning/covid_xray_prediction.html", {

@@ -94,12 +94,26 @@
 			text-transform: uppercase;
 			text-align: center;
 		}
+		.alert:nth-child(1) {
+			background: transparent;
+			border: none;
+			outline: none;
+			color: orange;
+		}
+
+		.alert:nth-child(2) {
+			background: transparent;
+			border: none;
+			outline: none;
+			color: yellow;
+		}
+
 	</style>
 </head>
 <body>
 	<div class="body">
 		<div class='header'>
-			<h1 class="buttons m-auto btn">Predict Corona From Xray  Report </h1>
+			<h1 class="buttons m-auto btn">Predict Covid From Xray Report </h1>
 		</div>
 		<section>
 				<form method="POST" enctype="multipart/form-data">
@@ -111,9 +125,9 @@
 				  </div>
 				</form>
 				<div class="data">
-					{% id data == 'false' %}
-						<div class="spinner-border" role="status">
-						  <span class="sr-only">Loading...</span>
+					{% if data == 'false' %}
+						<div class="alert alert-success" role="success">
+						  Upload Chest Xray Report
 						</div>
 					{% else %}
 						<div class="alert alert-danger" role="alert">
