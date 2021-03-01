@@ -18,7 +18,8 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 from django.core.files.storage import FileSystemStorage
 from PIL import Image
-from .xray_classify_production import *
+from .xray_classify_production import classify_xray
+import cv2
 
 def home(request):
 	"""
@@ -87,14 +88,20 @@ def covid_xray_prediction(request, *args, **kwargs):
 	"""
 	if request.method == 'POST' and request.FILES['file']:
 		image = request.FILES['file']
-		hasCovid = classify_xray(image)
-		print(hasCovid)
 		image = Image.open(image).convert('RGB')
+		image1 = cv2.imread(image)
+		hasCovid = classify_xray(image1)
+		print(hasCovid)
+		if hasCovid == 'noncovid':
+			return render(request, "machine_learning/covid_xray_prediction.html", {
+				'data': 'true'
+			})
+		# image = Image.open(image).convert('RGB')
 		data = predict_from_xray(image)
 		return redirect("main:covid_xray_result", data)
 	return render(request, "machine_learning/covid_xray_prediction.html", {
-			'data': 'false'
-		})
+		'data': 'false'
+	})
 
 
 def covid_xray_result(request, *args, **kwargs):
