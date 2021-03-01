@@ -25,7 +25,7 @@ def joiner(folder_name, file_name):
     paths = os.path.join(paths, file_name)
     return paths
 
-with open(joiner('corona_viral_detector', 'pick_resnet18.obj'), 'rb') as rfile:
+with open(joiner('machine_learning_models/xray_covid_prediction', 'pick_resnet18.obj'), 'rb') as rfile:
     resnet18 = pickle.load(rfile)
 
 
