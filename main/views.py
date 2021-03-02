@@ -11,14 +11,15 @@ from time import  sleep
 from main.utils import render_to_pdf
 from django.views.generic import View
 from django.contrib.auth.models import User
-from .xray_production import predict_from_xray
+# from .xray_production import predict_from_xray
 from .symptoms_production import predict_covid_from_symptoms
 from .models import Contact
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.core.files.storage import FileSystemStorage
 from PIL import Image
-from .xray_classify_production import classify_xray
+# from .xray_classify_production import classify_xray
+from .production import predict
 import cv2
 import os
 import numpy
@@ -92,11 +93,9 @@ def covid_xray_prediction(request, *args, **kwargs):
 	"""
 	if request.method == 'POST' and request.FILES['file']:
 		image = request.FILES['file']
-		nparr = numpy.fromstring(image, numpy.uint8)
-		img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-		hasCovid = classify_xray(img)
-		print(hasCovid)
-		if hasCovid == 'noncovid':
+		image = Image.open(image)
+		hasCovid = predict(image)
+		if hasCovid == 'others':
 			return render(request, "machine_learning/covid_xray_prediction.html", {
 				'data': 'true'
 			})
