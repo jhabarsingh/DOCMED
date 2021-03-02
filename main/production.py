@@ -16,7 +16,13 @@ from keras.models import load_model
 
 classes = ['covid', 'normal', 'others', 'viral']
 
-model = load_model('pickle.h5')
+
+def joiner(file_name):
+    paths = os.path.dirname(os.path.abspath(__file__))
+    paths = os.path.join(paths, file_name)
+    return paths
+
+model = load_model(joiner('pickle.h5'))
 
 def predict(image):
 	img = load_img(image,target_size=(256,256))

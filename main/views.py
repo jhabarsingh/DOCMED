@@ -23,6 +23,8 @@ from .production import predict
 import cv2
 import os
 import numpy
+from datetime import datetime
+
 
 def home(request):
 	"""
@@ -86,6 +88,14 @@ def covid_symptoms_result(request, *args, **kwargs):
 	return render(request, "machine_learning/covid_symptoms_result.html", {"result" : data})
 
 
+def joiner(folder_name, file_name):
+	paths = os.path.dirname(os.path.abspath(__file__))
+	paths = os.path.dirname(paths)
+	paths = os.path.join(paths, folder_name)
+	paths = os.path.join(paths, file_name)
+	return paths
+
+
 @csrf_exempt
 def covid_xray_prediction(request, *args, **kwargs):
 	"""
@@ -93,15 +103,19 @@ def covid_xray_prediction(request, *args, **kwargs):
 	"""
 	if request.method == 'POST' and request.FILES['file']:
 		image = request.FILES['file']
-		image = Image.open(image)
-		hasCovid = predict(image)
+		img1 = Image.open(image)
+		fe = img1.format
+		now = datetime.now()
+		timestamp = datetime.timestamp(now)
+		img1.save(joiner('media', f'{timestamp}.{fe}'))
+		
+		img1 = joiner('media', f'{timestamp}.{fe}')
+		hasCovid = predict(img1)
 		if hasCovid == 'others':
 			return render(request, "machine_learning/covid_xray_prediction.html", {
 				'data': 'true'
 			})
-		image = Image.open(image).convert('RGB')
-		data = predict_from_xray(image)
-		return redirect("main:covid_xray_result", data)
+		return redirect("main:covid_xray_result", hasCovid)
 	return render(request, "machine_learning/covid_xray_prediction.html", {
 		'data': 'false'
 	})

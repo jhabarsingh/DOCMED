@@ -6,3 +6,5 @@ dummy.*
 */chest_xray_classifier/pickle.h5
 */ctscan_covid_prediction/images
 *.crdownload
+main/pickle.h5
+media
