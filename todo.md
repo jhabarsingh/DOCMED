@@ -6,9 +6,10 @@
 6. [XRAY CLASSIFIER ](https://medium.com/pytorch/image-similarity-search-in-pytorch-1a744cf3469)
 3. Frontend
 -->
-2. [CHATBOT](https://marutitech.com/build-a-chatbot-using-dialogflow/) 
-3. OAuth
+2. [CHATBOT](https://medium.com/voice-tech-podcast/how-to-create-chatbot-using-rasa-82954e141ae7) 
+3. [OAUTH](https://simpleisbetterthancomplex.com/tutorial/2016/10/24/how-to-add-social-login-to-django.html)
 4. [IMPORTANT COUNTER QUESTIONS DOC]()
+5. [CHAT APP](https://medium.com/@9cv9official/simple-chat-app-using-django-channel-ed5032b79b9c)
 
 ### ML MODELS
 1. [COVID SYMPTOMS](https://github.com/jhabarsingh/DOCMED/blob/main/machine_learning_models/chest_xray_classifier/script.py)
