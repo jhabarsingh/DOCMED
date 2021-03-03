@@ -22,8 +22,6 @@
 ### ML MODELS
 1. [COVID SYMPTOMS](https://github.com/jhabarsingh/DOCMED/blob/main/machine_learning_models/chest_xray_classifier/script.py)
 2. [XRAY PREDICTION](https://github.com/jhabarsingh/DOCMED/blob/main/machine_learning_models/xray_covid_prediction/xray.py)
-3. [CT SCAN CLASSIFIER](https://github.com/jhabarsingh/DOCMED/blob/main/machine_learning_models/lung_ctscan_classifier/script.py)
-4. [CT SEGMENTATION](https://github.com/jhabarsingh/DOCMED/blob/main/machine_learning_models/ctscan_segmentation_covid_severity_prediction/script.py)
 5. [XRAY CLASSIFIER](https://github.com/jhabarsingh/DOCMED/blob/main/machine_learning_models/chest_xray_classifier/script.py)
 6. [CT SCAN PREDICTION](https://github.com/jhabarsingh/DOCMED/blob/main/machine_learning_models/ctscan_covid_prediction/predit.py)
 
