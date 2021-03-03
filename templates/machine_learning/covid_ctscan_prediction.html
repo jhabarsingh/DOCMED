@@ -1,7 +1,11 @@
+{% extends "index.html" %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Corona Xray</title>
+	<title>Corona CT SCAN</title>
 	<link rel="icon" href="https://specials-images.forbesimg.com/imageserve/5e74f4b010380d0006bdbd41/960x0.jpg?fit=scale" type="image/gif" sizes="32x32">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<style>
@@ -90,68 +94,56 @@
 			text-transform: uppercase;
 			text-align: center;
 		}
+		.alert:nth-child(1) {
+			background: transparent;
+			border: none;
+			outline: none;
+			color: orange;
+		}
+
+		.alert:nth-child(2) {
+			background: transparent;
+			border: none;
+			outline: none;
+			color: yellow;
+		}
+
+		.alert {
+			font-size: 20px;
+		}
+
 	</style>
 </head>
 <body>
 	<div class="body">
 		<div class='header'>
-			<h1 class="buttons m-auto btn">Predict Corona From Xray  Report </h1>
+			<h1 class="buttons m-auto btn">Predict Covid From CT SCAN Report </h1>
 		</div>
 		<section>
-				<form>
+				<form method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
 				  <div class="form-group shadow p-5 mt-5">
-				    <label for="exampleFormControlFile1">XRAY REPORT</label>
-				    <input type="file" class="text-light form-control-file" id="exampleFormControlFile1">
-				  	<input type="submit">
+				    <label for="exampleFormControlFile1">CT SCAN REPORT</label>
+				    <input type="file" required class="text-light form-control-file" id="exampleFormControlFile1" name="file" />
+				  	<input type="submit" />
 				  </div>
 				</form>
 				<div class="data">
-					<div class="spinner-border" role="status">
-					  <span class="sr-only">Loading...</span>
-					</div>
+					{% if data == 'false' %}
+						<div class="alert alert-success" role="success">
+						  Upload Lungs CT SCAN Report
+						</div>
+					{% else %}
+						<div class="alert alert-danger" role="alert">
+						  Supports Only Lungs CT SCAN images
+						</div>
+					{% endif %}
 				</div>
 		</section>
 	</div>
 	<script>
-		url = 'http://localhost:8000/corona_xray/';
-		html = '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>';
-
-
-		function getBase64(file) {
-		   var reader = new FileReader();
-		   reader.readAsDataURL(file);
-		   reader.onload = function () {
-		     console.log(reader.result);
-		   };
-		   reader.onerror = function (error) {
-		     console.log('Error: ', error);
-		   };
-		}
-		
-		document.querySelector('form [type="submit"]').addEventListener('click', (event) => {
-			event.preventDefault();
-			const inputFiles = document.querySelectorAll('input[type="file"]');
-			const formData = new FormData();
-
-			for (const file of inputFiles) {
-			    formData.append(file.name, file.files[0]);
-			}
-			console.log(formData)
-			// image = document.querySelector('form [type="file"]')
-			// file = getBase64(image.files[0])
-			fetch(url, {
-				method: 'POST',
-				data: formData,
-				mode: 'no-cors'
-
-			}).then(res => {
-				return res.json
-			}).then( res => {
-				console.log(res)
-			})
-			return false
-		})
-		document.querySelector('.data').innerHTML(html);
 	</script>
 </body>
 </html>
+
+{% endblock %}
