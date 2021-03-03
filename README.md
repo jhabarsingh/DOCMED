@@ -40,7 +40,7 @@ Features Provided By the **DOCMED**
   6. CONSULT WITH A **DOCTORS** IN YOUR CITY
   7. [**TRACK COVID CASES**](https://github.com/jhabarsingh/COTRACK) WORLD WIDE OR COUNTRY WISE
 
-
+![MACHINE LEARNING](https://github.com/jhabarsingh/DOCMED/blob/main/docs/animations/ml_new.gif)
 
 ## Project Setup
 
