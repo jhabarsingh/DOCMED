@@ -11,14 +11,12 @@ from time import  sleep
 from main.utils import render_to_pdf
 from django.views.generic import View
 from django.contrib.auth.models import User
-# from .xray_production import predict_from_xray
 from .symptoms_production import predict_covid_from_symptoms
 from .models import Contact
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.core.files.storage import FileSystemStorage
 from PIL import Image
-# from .xray_classify_production import classify_xray
 from .production import predict
 from .ctscan_production import predict1
 import cv2
