@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 from keras.preprocessing.image import ImageDataGenerator
 from keras.preprocessing.image import load_img,img_to_array
 
-classes = ['covid', 'normal', 'others']
+classes = ['covid', 'normal', 'others', 'viral']
 train_df = pd.DataFrame(columns=['image','clas'])
 val_df = pd.DataFrame(columns=['image','clas'])
 
@@ -50,14 +50,14 @@ val_generator = val_datagen.flow_from_dataframe(val_df,x_col='image',y_col='clas
 
 from keras.applications.inception_resnet_v2 import InceptionResNetV2
 
-inceptionresnet = InceptionResNetV2(include_top=False, input_shape=(256,256,3),classes=3)
+inceptionresnet = InceptionResNetV2(include_top=False, input_shape=(256,256,3),classes=4)
 
 inceptionresnet.trainable = False
 
 last_layer = inceptionresnet.layers[-1].output
 
 x = GlobalAveragePooling2D()(last_layer)
-x = Dense(3,activation='softmax')(x)
+x = Dense(4,activation='softmax')(x)
 
 model = Model(inceptionresnet.inputs,x)
 
