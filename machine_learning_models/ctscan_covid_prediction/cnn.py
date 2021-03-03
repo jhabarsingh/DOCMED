@@ -67,9 +67,6 @@ model.compile(loss='categorical_crossentropy',optimizer=keras.optimizers.RMSprop
 
 history = model.fit(train_generator,epochs=3,validation_data=val_generator)
 
-# import pickle
-# with open('pick_resnet18.obj', 'wb') as wfile:
-#     pickle.dump(resnet18, wfile)
 
 model.save("pickle.h5")
 
