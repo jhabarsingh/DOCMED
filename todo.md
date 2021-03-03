@@ -6,10 +6,8 @@
 6. [XRAY CLASSIFIER ](https://medium.com/pytorch/image-similarity-search-in-pytorch-1a744cf3469)
 3. Frontend
 -->
-1. CT SCAN SCRIPT `28 feb`
 2. [CHATBOT](https://marutitech.com/build-a-chatbot-using-dialogflow/) 
 3. OAuth
-4. ML Model Connect with backend `28 feb`
 5. [DOC PREPERATION](https://docs.google.com/document/d/1XPR-5olyHrHMDU5_5voXNi5yHF3eEK8o4VtmYMlG2-c/edit?usp=sharing) `28 feb`
       1. ML MODELS Doc Should Include
             1. Code Explaination (Brief)
