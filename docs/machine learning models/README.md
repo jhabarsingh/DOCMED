@@ -1,4 +1,4 @@
-# DOCUMENTATION
+# MACHINE LEARNING MODELS USED IN DOCMED
 
 ### DATASETS
 1. We downloaded the datasets from [Google Dataset Search Engine](https://datasetsearch.research.google.com/)
