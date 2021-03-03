@@ -10,6 +10,7 @@
 3. [OAUTH](https://simpleisbetterthancomplex.com/tutorial/2016/10/24/how-to-add-social-login-to-django.html)
 4. [IMPORTANT COUNTER QUESTIONS DOC]()
 5. [CHAT APP](https://medium.com/@9cv9official/simple-chat-app-using-django-channel-ed5032b79b9c)
+6. [PAYMENT GATEWAY](https://dev.to/iiits-iota/paytm-payment-gateway-integration-in-django-1657)
 
 ### ML MODELS
 1. [COVID SYMPTOMS](https://github.com/jhabarsingh/DOCMED/blob/main/machine_learning_models/chest_xray_classifier/script.py)
