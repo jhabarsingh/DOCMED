@@ -8,14 +8,7 @@
 -->
 2. [CHATBOT](https://marutitech.com/build-a-chatbot-using-dialogflow/) 
 3. OAuth
-5. [DOC PREPERATION](https://docs.google.com/document/d/1XPR-5olyHrHMDU5_5voXNi5yHF3eEK8o4VtmYMlG2-c/edit?usp=sharing) `28 feb`
-      1. ML MODELS Doc Should Include
-            1. Code Explaination (Brief)
-            4. Input Format 
-            5. Output Format
-            3. What Model is Used ?
-            5. What all models were used ?
-            6. Why your choose the above Models
+4. [IMPORTANT COUNTER QUESTIONS DOC]()
 
 ### ML MODELS
 1. [COVID SYMPTOMS](https://github.com/jhabarsingh/DOCMED/blob/main/machine_learning_models/chest_xray_classifier/script.py)

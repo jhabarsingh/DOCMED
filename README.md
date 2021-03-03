@@ -1,4 +1,4 @@
-# DOCMED  ⚡️ [![GitHub](https://img.shields.io/github/license/jhabarsingh/DOCMED?color=blue)](https://github.com/jhabarsingh/DOCMED/blob/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/jhabarsingh/DOCMED)](https://github.com/jhabarsingh/DDOCMED/stargazers)  [![GitHub contributors](https://img.shields.io/github/contributors/jhabarsingh/DOCMED.svg)](https://github.com/jhabarsingh/DOCMED/graphs/contributors)  [![GitHub issues](https://img.shields.io/github/issues/jhabarsingh/DOCMED.svg)](https://github.com/jhabarsingh/DOCMED/issues) [![GitHub forks](https://img.shields.io/github/forks/jhabarsingh/DOCMED.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/jhabarsingh/DOCMED/network/)
+# DOCMED  ⚡️ [![GitHub](https://img.shields.io/github/license/jhabarsingh/DOCMED?color=blue)](https://github.com/jhabarsingh/DOCMED/blob/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/jhabarsingh/DOCMED)](https://github.com/jhabarsingh/DDOCMED/stargazers)  [![GitHub contributors](https://img.shields.io/github/contributors/jhabarsingh/DOCMED.svg)](https://github.com/jhabarsingh/DOCMED/graphs/contributors)  [![GitHub issues](https://img.shields.io/github/issues/jhabarsingh/DOCMED.svg)](https://github.com/jhabarsingh/DOCMED/issues) [![GitHub forks](https://img.shields.io/github/forks/jhabarsingh/DOCMED.svg?style=social&label=Fork)](https://GitHub.com/jhabarsingh/DOCMED/network/)
 
 <p align="center">
   <img src="https://github.com/jhabarsingh/DOCMED/blob/main/docs/animations/docmed.png?raw=true" />
@@ -11,7 +11,7 @@
   <img  title="Django" src="https://icon-library.com/images/django-icon/django-icon-0.jpg" width="50px" height="50px" style="margin-right:5px;" />
   <img  title="Kommunicate" src="https://ps.w.org/kommunicate-live-chat/assets/icon-256x256.png?rev=2291443" height="50px"  style="margin-right:5px;"/>
   <img title="Heroku"  src="https://www.thedevcoach.co.uk/wp-content/uploads/2020/04/heroku.png" height="50px"  style="margin-right:5px;"/> 
-  <img  title="Pytorch" src="https://pytorch.org/assets/images/pytorch-logo.png" height="50px" style="margin-right:5px;" />
+  <img  title="Tensorflow" src="https://www.altoros.com/blog/wp-content/uploads/2016/01/tensorflow-logo-cropped.png" height="50px" style="margin-right:5px;" />
   <img  title="Postgresql" src="https://pbs.twimg.com/media/EGc7jg4XoAA0bez.png" height="50px" style="margin-right:5px;" />
   <img  title="Scikit Learn" src="https://www.analyticsvidhya.com/wp-content/uploads/2015/01/scikit-learn-logo.png" height="50px" style="margin-right:5px;" />
   <img title="Reactjs" src="https://icons-for-free.com/iconfiles/png/512/design+development+facebook+framework+mobile+react+icon-1320165723839064798.png" width="50px" height="50px"  style="margin-right:5px;"/>
