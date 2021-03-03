@@ -20,6 +20,7 @@ from django.core.files.storage import FileSystemStorage
 from PIL import Image
 # from .xray_classify_production import classify_xray
 from .production import predict
+from .ctscan_production import predict1
 import cv2
 import os
 import numpy
@@ -117,6 +118,39 @@ def covid_xray_prediction(request, *args, **kwargs):
 			})
 		return redirect("main:covid_xray_result", hasCovid)
 	return render(request, "machine_learning/covid_xray_prediction.html", {
+		'data': 'false'
+	})
+
+
+def covid_ctscan_result(request, *args, **kwargs):
+	"""
+	RENDERS PAGE TO DISPLAY COVID RESULT
+	"""
+	data = kwargs.get("result")
+	return render(request, "machine_learning/covid_ctscan_result.html", {"result" : data})
+
+
+@csrf_exempt
+def covid_ctscan_prediction(request, *args, **kwargs):
+	"""
+	Covid Detectoin From ctscan Report
+	"""
+	if request.method == 'POST' and request.FILES['file']:
+		image = request.FILES['file']
+		img1 = Image.open(image)
+		fe = img1.format
+		now = datetime.now()
+		timestamp = datetime.timestamp(now)
+		img1.save(joiner('media', f'{timestamp}.{fe}'))
+		
+		img1 = joiner('media', f'{timestamp}.{fe}')
+		hasCovid = predict1(img1)
+		if hasCovid == 'others':
+			return render(request, "machine_learning/covid_ctscan_prediction.html", {
+				'data': 'true'
+			})
+		return redirect("main:covid_ctscan_result", hasCovid)
+	return render(request, "machine_learning/covid_ctscan_prediction.html", {
 		'data': 'false'
 	})
 

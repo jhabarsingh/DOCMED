@@ -63,6 +63,9 @@ ml = [
     path("covid_xray_prediction", views.covid_xray_prediction, name="covid_xray_prediction"),
     path("covid_xray_result/<slug:result>/", views.covid_xray_result, 
           name="covid_xray_result"),
+    path("covid_ctscan_prediction", views.covid_ctscan_prediction, name="covid_ctscan_prediction"),
+    path("covid_ctscan_result/<slug:result>/", views.covid_ctscan_result, 
+          name="covid_ctscan_result"),
 ]
 
 
