@@ -9,7 +9,7 @@
 4. [IMPORTANT COUNTER QUESTIONS DOC]()
 5. [CHAT APP](https://medium.com/@9cv9official/simple-chat-app-using-django-channel-ed5032b79b9c)
 6. [PAYMENT GATEWAY](https://dev.to/iiits-iota/paytm-payment-gateway-integration-in-django-1657)
-
+7. [DOCKERIZE]()
 
 ### Users in the database (For Testing)
 1. PATIENT
