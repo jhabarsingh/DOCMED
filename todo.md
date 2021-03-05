@@ -1,5 +1,3 @@
-## [TASK LIST](https://docs.google.com/spreadsheets/d/1iQy-xua6GSUUSTiHlJAx0tA9JE3rLR_C984T4UJYZNg/edit#gid=0)
-
 ### TASKS
 <!--1. [CT SCAN](https://www.kaggle.com/daenys2000/unet-segmentation)
     * [DATASET](https://www.kaggle.com/andrewmvd/covid19-ct-scans/code)
