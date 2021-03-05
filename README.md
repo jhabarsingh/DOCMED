@@ -48,7 +48,7 @@ Features Provided By the **DOCMED**
 ```bash
 git clone https://github.com/jhabarsingh/DOCMED.git  
 cd DOCMED
-python3 -m venv env
+python3 -m venv env # Python 3.6.9 or 3.7.0 version 
 source env/bin/activate
 python3 -m pip install --upgrade pip
 pip install -r requirements.txt
@@ -59,7 +59,7 @@ python manage.py runserver
 ```bash
 git clone https://github.com/jhabarsingh/DOCMED.git  
 cd DOCMED
-conda create -n docmed python==3.7
+conda create -n docmed python==3.7 
 conda activate docmed
 python3 -m pip install --upgrade pip
 pip install -r requirements.txt
