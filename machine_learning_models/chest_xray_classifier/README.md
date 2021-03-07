@@ -1,4 +1,4 @@
-### X-RAY CLASSIFIER
+## X-RAY CLASSIFIER
 
 **OBJECTIVE** : Using Keras 2D Convolution Model, we create a X-RAY Classifier
 that predicts whether the input image is an X-RAY report or not.

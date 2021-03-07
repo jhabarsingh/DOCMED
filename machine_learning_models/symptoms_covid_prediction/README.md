@@ -1,4 +1,4 @@
-### COVID SYMPTOMS
+## COVID SYMPTOMS
 
 **OBJECTIVE** : Here, we are predicting the Covid possibility on the accordance of
 symptoms given by the user. For this we tried two of the ML models K-means and

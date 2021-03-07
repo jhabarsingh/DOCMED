@@ -1,4 +1,4 @@
-### X-RAY PREDICTION
+## X-RAY PREDICTION
 
 **OBJECTIVE** : Using PyTorch Library, we have created a COVID-19 classifier that
 predicts whether a patient is suffering from coronavirus or not, using chest X-ray of

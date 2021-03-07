@@ -1,4 +1,4 @@
-### CT SCAN PREDICTION
+## CT SCAN PREDICTION
 
 **OBJECTIVE** : Using PyTorch, we create a COVID-19 classifier that predicts
 whether a patient is suffering from coronavirus or not, using chest CT scans of
