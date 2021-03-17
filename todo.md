@@ -5,8 +5,8 @@
 3. [CHAT APP](https://medium.com/@9cv9official/simple-chat-app-using-django-channel-ed5032b79b9c)
 4. [PAYMENT GATEWAY](https://dev.to/iiits-iota/paytm-payment-gateway-integration-in-django-1657)
 5. [DOCKERIZE]()
-6. [RECOMENDER]()
-7. [SENTIMENT ANALYSIS]()
+6. [RECOMENDER](https://github.com/jhabarsingh/DOCMED-RECOMMENDER-SYSTEM)
+7. [VULGUR LANGUAGE ANALYSIS](https://github.com/jhabarsingh/HATE-SPEECH-DETECTION)
 8. [VIDEO CONFERENCE]()
 9. [ADD DUMMY DATA SCRIPT]()
 
