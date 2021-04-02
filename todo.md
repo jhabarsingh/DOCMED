@@ -8,7 +8,6 @@
 6. [RECOMENDER](https://github.com/jhabarsingh/DOCMED-RECOMMENDER-SYSTEM)
 7. [VULGUR LANGUAGE ANALYSIS](https://github.com/jhabarsingh/HATE-SPEECH-DETECTION)
 8. [VIDEO CONFERENCE]()
-9. [ADD DUMMY DATA SCRIPT]()
 
 ### Users in the database (For Testing)
 1. PATIENT
