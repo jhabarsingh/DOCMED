@@ -66,6 +66,15 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
+### Using Docker
+
+```bash
+sudo apt-get install docker docker-compose # Install docker, docker-compose on linux
+git clone https://github.com/jhabarsingh/DOCMED.git  
+cd DOCMED
+sudo docker-compose up
+```
+
 ## [Want To Contribute](https://medium.com/mindsdb/contributing-to-an-open-source-project-how-to-get-started-6ba812301738)
 ### You can contribute to this project in many ways
  1. You can create an issue if you find any bug.
