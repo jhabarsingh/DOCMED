@@ -20,7 +20,7 @@ google-auth==1.27.0
 google-auth-oauthlib==0.4.2
 google-pasta==0.2.0
 grpcio==1.32.0
-h5py==2.10.0
+h5py
 html5lib==1.1
 idna==2.10
 importlib-metadata==3.7.0
@@ -64,7 +64,7 @@ social-auth-core==3.3.3
 sqlparse==0.4.1
 tensorboard==2.4.1
 tensorboard-plugin-wit==1.8.0
-tensorflow==2.4.1
+tensorflow
 tensorflow-estimator==2.4.0
 termcolor==1.1.0
 threadpoolctl==2.1.0
