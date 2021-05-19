@@ -7,9 +7,7 @@
   <summary>:zap: TECH STACK</summary>
   <br/>
   <div style="display:flex;justify-content:space-around">
-  <img titlt="Dialog Flow" src="https://pbs.twimg.com/profile_images/880147119528476672/S7C-2C6t.jpg" width="50px" height="50px"  style="margin-right:5px;"/>
   <img  title="Django" src="https://icon-library.com/images/django-icon/django-icon-0.jpg" width="50px" height="50px" style="margin-right:5px;" />
-<!--   <img  title="Kommunicate" src="https://ps.w.org/kommunicate-live-chat/assets/icon-256x256.png?rev=2291443" height="50px"  style="margin-right:5px;"/> -->
   <img title="Heroku"  src="https://www.thedevcoach.co.uk/wp-content/uploads/2020/04/heroku.png" height="50px"  style="margin-right:5px;"/> 
   <img  title="Tensorflow" src="https://www.altoros.com/blog/wp-content/uploads/2016/01/tensorflow-logo-cropped.png" height="50px" style="margin-right:5px;" />
   <img  title="Postgresql" src="https://pbs.twimg.com/media/EGc7jg4XoAA0bez.png" height="50px" style="margin-right:5px;" />
